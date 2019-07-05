@@ -1,18 +1,17 @@
-# Vidra Design System
+# Vidra Webshop theme Design System
 
-Vidra Design System, totally designed by Bemind Interactive.
+Vidra Webshop theme Design System, designed by Bemind Interactive.
 
 &nbsp;
 
-![screenshot-desktop](https://github.com/ilPas/dashboard-html-css/blob/master/src/images/VidraDesign-1.png)
+![screenshot-desktop](https://github.com/vidra-io/Webshop-boilerplate/blob/master/pages/screenshot.png)
 
 &nbsp;
 
 # Development
 
-Our version of theme styles are compiled using Gulp and Node for compiling files and pages.
-You'll need Node and Gulp installed globally.
-After that, from the theme's root directory:
+Our version of theme styles are compiled using Node which you'll need to install globally.
+After that, navigate to the theme's root directory and run:
 
 ```bash
 $ npm install
