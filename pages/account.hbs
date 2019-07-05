@@ -1,0 +1,237 @@
+<section class="t-page__section c-profile">
+  <div class="container">
+     <div class="row text-center">
+       <div class="col title">
+          <p>Dati utente</p>
+          <h3>Account</h3>
+       </div>
+     </div>
+    <div class="row">
+      <div class="col-3 side-navigation">
+          <ul>
+            <li class="welcome">
+              Benvenuto, {{account.name}}
+            </li>
+            <li class="active">
+              <a href="/user/account">Dati utente</a>
+            </li>
+            <li>
+              <a href="/user/account/orders">I tuoi ordini</a>
+            </li>
+            <li>
+              <a href="/logout">Log out</a>
+            </li>
+          </ul>
+      </div>
+      <div class="col-9">
+
+        <div class="card mb-4">
+          <div class="header">
+            <div class="head-title">
+              <h4>Dati utente</h4>
+              <!--<label>Predefinito</label>-->
+            </div>
+            <div class="actions">
+              <a href="/user/account/edit">Modifica</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <div class="text">
+                <div class="text">
+                  <h4>Nome</h4>
+                  <p>{{account.name}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>E-mail</h4>
+                <p>{{account.email}}</p>
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>Telefono</h4>
+                {{#if account.phone}}
+                  <p>{{account.phone}}</p>
+                {{else}}
+                  <p class="disabled">Non hai ancora inserito un numero di telefono</p>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="body-head">
+          <div class="text">
+            <p>
+              Aggiorna i tuoi metodi di pagamento, o aggiungi una carta
+            </p>
+          </div>
+          <a class="btn btn-dark">
+            Aggiungi una carta
+          </a>
+        </div>
+        <div class="card mb-4">
+          <div class="header">
+            <div class="head-title">
+              <img src="http://jellyandjam.staging.vidra.shop/public/assets/images/Brand/MASTERCARD.png" />
+              <h4>Maestro termina con 1889</h4>
+              <label>Predefinito</label>
+            </div>
+            <div class="actions">
+              <a href="#">Modifica</a>
+              <a href="#">Elimina carta</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <div class="text">
+                <div class="text">
+                  <h4>Nome</h4>
+                  <p>Alessandro Miliucci</p>
+                </div>
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>E-mail</h4>
+                <p>alessandro.miliucci@mail.it</p>
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>Telefono</h4>
+                <p>347 1234567</p>
+              </div>
+            </div>
+            <div class="campo"></div>
+          </div>
+        </div>
+
+        <div id="edit" class="card mb-4">
+          <div class="header">
+            <div class="head-title">
+              <img src="http://jellyandjam.staging.vidra.shop/public/assets/images/Brand/MASTERCARD.png">
+              <h4>Maestro termina con 1889</h4>
+              <label>Predefinito</label>
+            </div>
+            <div class="actions">
+              <a href="#">Salva</a>
+              <a href="#">Elimina carta</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <div class="text">
+                  <h4>Nome</h4>
+                  <input required name="nome" type="text" id="nome" aria-describedby="nome" placeholder="Nome Cognome" value="Alessandro Miliucci">
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>E-mail</h4>
+               <input required name="email" type="email" id="email" aria-describedby="email" placeholder="mail@mail.it" value="alessandro.miliucci@mail.it">   
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>Telefono</h4>
+                <input required name="telefono" type="" id="telefono" aria-describedby="telefono" placeholder="347 1234567" value="347 6166165">              
+              </div>
+            </div>
+            <div class="campo"></div>
+          </div>
+          <div class="save">
+            <button class="btn ml-auto"><i class="fas fa-check-circle"></i> Salva</button>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="header">
+            <div class="head-title">
+              <h4>Maestro termina con 1889</h4>
+            </div>
+            <div class="actions">
+              <a href="#">Modifica</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <div class="text">
+                <h4>Nome</h4>
+                <p>Alessandro Miliucci</p>
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>E-mail</h4>
+                <p>alessandro.miliucci@mail.it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="body-head">
+          <div class="text error">
+            <h3>
+              Non hai ancora nessun metodo di pagamento
+            </h3>
+            <p>
+              Per velocizzare il pagamento dei tuoi articoli <br/>
+              <a href="#">aggiungi una carta</a>
+            </p>
+          </div>
+        </div>
+   
+        <div class="card mb-4">
+          <div class="header">
+            <div class="head-title">
+              <div class="ordine">
+                <h4>Numero ordine:</h4>
+                <p>2389384357</p>
+              </div>
+              <div class="column">
+                <span><h4>Data: </h4><p>19/06/17</p></span>
+                <span><h4>Totale: </h4><p>230,00 €</p></span>
+              </div>
+              <div class="column">
+                <span class="correct"><h4>Stato pagamento: </h4><p><i class="fas fa-check-circle"></i> Completato</p></span>
+                <span class="waiting"><h4>Stato spedizione: </h4><p><i class="fas fa-exclamation-circle"></i> In attesa</p></span>
+              </div>
+            </div>
+            <div class="actions">
+              <a href="#">Dettagli ordine</a>
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <img class="product" src="https://cdn-img.vidra.io/staging-munna_vidra328/1552563323518-WA221C0HA-K11%409.jpg"/>
+              <div class="text">
+                <h4>Camicetta Franchi</h4>
+                <p>€ 244,99</p>
+              </div>
+            </div>
+            <div class="campo">
+              <img class="product" src="https://cdn-img.vidra.io/staging-munna_vidra328/1551969662413-P6921C056-G11%404.jpg"/>
+              <div class="text">
+                <h4>Caschetto - Abito in maglia</h4>
+                <p>€13,44</p>
+              </div>
+            </div>
+            <div class="campo">
+              <img class="product" src="https://cdn-img.vidra.io/staging-munna_vidra328/1552563565813-M3251K005-Q11%408.jpg"/>
+              <div class="text">
+                <h4>Occhiali da sole</h4>
+                <p>€17,99</p>
+              </div>
+              <div class="amount">x2</div>
+            </div>
+            <div class="campo"></div>
+          </div>
+        </div>-->
+    </div>
+  </div>
+</section>

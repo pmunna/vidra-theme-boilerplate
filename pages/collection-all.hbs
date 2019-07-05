@@ -1,0 +1,232 @@
+<div class="container">
+	<div class="row">
+		<div class="col-3 d-lg-block d-none">
+			<section class="t-page__section pb-4">
+			  <div class="c-cards">
+				<p><b>Ordina per:</b></p>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{#ifEquals activeNavigation 'lastarr'}} Ultimi arrivi {{/ifEquals}}
+							{{#ifEquals activeNavigation 'nameaz'}} Nome A-Z {{/ifEquals}}
+							{{#ifEquals activeNavigation 'nameza'}} Nome Z-A {{/ifEquals}}
+							{{#ifEquals activeNavigation 'priceasc'}} Prezzo crescente {{/ifEquals}}
+							{{#ifEquals activeNavigation 'pricedesc'}} Prezzo decrescente {{/ifEquals}}
+						</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								{{#if navigation.lastarr}}
+									<a class="dropdown-item page-link" href="{{navigation.lastarr}}">Ultimi arrivi</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Ultimi arrivi</a>
+								{{/if}}
+								{{#if navigation.nameaz}}
+									<a class="dropdown-item page-link" href="{{navigation.nameaz}}">Nome A-Z</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Nome A-Z</a>
+								{{/if}}
+								{{#if navigation.nameza}}
+									<a class="dropdown-item page-link" href="{{navigation.nameza}}">Nome Z-A</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Nome Z-A</a>
+								{{/if}}
+								{{#if navigation.priceasc}}
+									<a class="dropdown-item page-link" href="{{navigation.priceasc}}">Prezzo crescente</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Prezzo crescente</a>
+								{{/if}}
+								{{#if navigation.pricedesc}}
+									<a class="dropdown-item page-link" href="{{navigation.pricedesc}}">Prezzo decrescente</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Prezzo decrescente</a>
+								{{/if}}
+							</div>
+					</div>
+			</section>
+			
+			{{#if tags.length}}
+			<section class="t-page__section pt-4">
+			  <div class="c-cards">
+				<p><b>Filtra per:</b></p>
+				<p class="sub">Tipologia</p>
+				  <ul class="pagination">
+					<li class="page-item">
+						{{#if activeTag}}
+								<a class="page-link {{#if activeTag}} {{else}} active disabled {{/if}}"
+								{{#if activeTag}} href="/collections/all" {{/if}}
+								><i class="far fa-circle"></i> Tutti</a>
+							{{else}}
+								<a class="page-link {{#if activeTag}} {{else}} active disabled {{/if}}"
+								{{#if activeTag}} href="/collections/all" {{/if}}
+								><i class="fas fa-circle"></i> Tutti</a>
+						{{/if}}
+					</li>
+					{{#each tags}}
+					<li class="page-item">
+						{{#ifEquals ../activeTag @this}}
+							<a class="page-link active"
+							{{#ifNotEquals ../activeTag @this}} href="/collections/all/{{URIEncoding @this}}"{{/ifNotEquals}}
+							><i class="fas fa-circle"></i> {{@this}}</a>
+							{{else}}
+								<a class="page-link disabled"
+								{{#ifNotEquals ../activeTag @this}} href="/collections/all/{{URIEncoding @this}}"{{/ifNotEquals}}
+								><i class="far fa-circle"></i> {{@this}}</a>
+						{{/ifEquals}}
+					</li>
+					{{/each}}
+				  </ul>
+				
+			  </div>
+			</section>
+			{{/if}}
+		</div>
+		
+		<div class="col-12 d-lg-none d-block">
+			<section class="t-page__section pb-4">
+			  <div class="c-cards">
+				<p><b>Ordina per:</b></p>
+					
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{#ifEquals activeNavigation 'lastarr'}} Ultimi arrivi {{/ifEquals}}
+							{{#ifEquals activeNavigation 'nameaz'}} Nome A-Z {{/ifEquals}}
+							{{#ifEquals activeNavigation 'nameza'}} Nome Z-A {{/ifEquals}}
+							{{#ifEquals activeNavigation 'priceasc'}} Prezzo crescente {{/ifEquals}}
+							{{#ifEquals activeNavigation 'pricedesc'}} Prezzo decrescente {{/ifEquals}}
+						</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								{{#if navigation.lastarr}}
+									<a class="dropdown-item page-link" href="{{navigation.lastarr}}">Ultimi arrivi</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Ultimi arrivi</a>
+								{{/if}}
+								{{#if navigation.nameaz}}
+									<a class="dropdown-item page-link" href="{{navigation.nameaz}}">Nome A-Z</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Nome A-Z</a>
+								{{/if}}
+								{{#if navigation.nameza}}
+									<a class="dropdown-item page-link" href="{{navigation.nameza}}">Nome Z-A</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Nome Z-A</a>
+								{{/if}}
+								{{#if navigation.priceasc}}
+									<a class="dropdown-item page-link" href="{{navigation.priceasc}}">Prezzo crescente</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Prezzo crescente</a>
+								{{/if}}
+								{{#if navigation.pricedesc}}
+									<a class="dropdown-item page-link" href="{{navigation.pricedesc}}">Prezzo decrescente</a>
+								{{else}}
+									<a class="dropdown-item page-link active disabled">Prezzo decrescente</a>
+								{{/if}}
+							</div>
+					</div>
+			  </div>
+			</section>
+			
+			{{#if tags.length}}
+			<section class="t-page__section pt-0 pb-0">
+			  <div class="c-cards">
+					<p><b>Filtra per:</b></p>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{activeTag}}
+						</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							{{#each tags}}
+								<li class="page-item">
+									<a
+										class="page-link {{#ifEquals ../activeTag @this}} active {{else}} disabled {{/ifEquals}}"
+										href="/collections/{{../slug}}/{{../external_id}}/{{URIEncoding @this}}?{{../currentQuery}}"
+									><i class="{{#ifEquals ../activeTag @this}} fas {{else}} far {{/ifEquals}} fa-circle"></i>{{@this}}</a>
+								</li>
+							{{/each}}
+							</div>
+					</div>
+			  </div>
+			</section>
+			{{/if}}
+		</div>
+	
+		<div class="col-12 col-lg-9">
+			<section class="t-page__section">
+				<div class="row c-cards">
+					{{#each products}}
+						<div class="col-lg-4 col-6">
+							<a href="{{url}}" class="">
+								<div class="card c-card__item">
+								{{#if isNew}}
+								<span class="badge badge-pill badge-success c-card__badge c-card__badge--sx">New</span>
+								{{/if}}
+								{{!-- <img class="card-img-top c-card__img" src="{{images.[0]}}" alt="Card image cap"> --}}
+								<div class="img-container">
+									<img class="card-img-top c-card__img" src="{{images.[0]}}" alt="Card image cap">
+								</div>
+								<div class="card-body c-card__body">
+									<h5 class="card-title c-card__title">{{name}}</h5>
+									<span class="c-card__price">{{price}}</span>
+									<div class="clearfix"></div>
+								
+								</div>
+								</div>
+							</a> 
+						</div>
+					{{/each}}
+				</div>
+			</section>
+
+					<section class="t-page__section">
+						<div class="container">
+							<div class="row justify-content-end">
+									{{#if paginator.prev}}
+										<a class="page-link pagination" href="{{paginator.prev}} "><i class="material-icons">chevron_left</i></a>
+									{{else}}
+										<a class="page-link pagination disabled"><i class="material-icons">chevron_left</i></a>
+									{{/if}}
+									<a class="page-link pagination"><p>Pagina {{paginator.current}} di {{paginator.totalPage}}</p></a>
+								{{#if paginator.next}}
+									<a class="page-link pagination" href="{{paginator.next}}"><i class="material-icons">chevron_right</i></a>
+								{{else}}
+									<a class="page-link pagination disabled"><i class="material-icons">chevron_right</i></a>
+								{{/if}}
+							</div>
+						</div>
+					</section>
+
+
+		<!--<section class="t-page__section">
+		  <div class="c-cards">
+			<div class="container">
+			  <ul class="pagination">
+				<li class="page-item">
+					{{#if paginator.prev}}
+					<a class="page-link" href="{{paginator.prev}} ">&lt;</a>
+					{{else}}
+					<a class="page-link disabled">&lt;</a>
+					{{/if}}
+				</li>
+				<li class="page-item">
+					<a class="page-link disabled">pagina {{paginator.current}} di {{paginator.totalPage}}</a>
+				</li>
+				{{#if paginator.next}}
+					<a class="page-link" href="{{paginator.next}}">&gt;</a>
+					{{else}}
+					<a class="page-link disabled">&gt;</a>
+				{{/if}}
+			  </ul>
+			</div>
+		  </div>
+		</section>-->
+		</div>
+	</div>
+</div>
+
+<div class="c-prefooter">
+  <div class="c-prefooter__text">
+    <strong>PAY WITH:</strong><br />
+    <ul class="list-inline">
+      <li class="list-inline-item"><img src="/public/assets/images/Brand/MASTERCARD.png" /></li>
+      <li class="list-inline-item"><img src="/public/assets/images/Brand/VISA.png" /></li>
+
+    </ul>
+  </div>
+</div>

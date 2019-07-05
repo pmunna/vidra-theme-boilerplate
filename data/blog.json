@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "title": "Titolo post",
+      "slug": "tittolo-post",
+      "number": 8,
+      "body": "<p>Testo del post in html</p>",
+      "meta_title": "titolo per i campi meta",
+      "meta_description": "descrizione per i campi meta",
+      "cover_image": "https://torange.biz/photo/42/IMAGE/creation-pottery-making-products-made-clay-42406.jpg"
+    }
+  ],
+  "paginator": {
+    "prev": "/url-to-prev-page",
+    "next": "/url-to-next-page",
+    "current": 1,
+    "totalPage": 10
+  }
+}

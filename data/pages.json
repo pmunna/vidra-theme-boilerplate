@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {
+      "title": "Titolo pagina0",
+      "slug": "tittolo-pagina0",
+      "number": 0,
+      "body": "<p>Testo del pagina in html</p>",
+      "meta_title": "titolo per i campi meta",
+      "meta_description": "descrizione per i campi meta",
+      "cover_image": "https://cdn.pixabay.com/photo/2017/07/31/20/50/makeup-2560945_1280.jpg"
+    },
+    {
+      "title": "Titolo pagina1",
+      "slug": "tittolo-pagina1",
+      "number": 1,
+      "body": "<p>Testo del pagina in html</p>",
+      "meta_title": "titolo per i campi meta",
+      "meta_description": "descrizione per i campi meta",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Prodotti_Tavernello.png"
+    }
+  ]
+}

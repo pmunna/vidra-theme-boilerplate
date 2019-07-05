@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="it">
+    <head>
+        <title>{{title}}</title>
+        <meta name="description" content="{{description}}">
+        {{#if metaTitle}}
+            <meta name="title" content="{{metaTitle}}">
+        {{/if}}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/public/assets/css/theme.css">
+        <link rel="canonical" href="{{canonical}}" />
+    </head>
+<body>
+<div class="contenitore">
+
+<!-- START CART -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cart" aria-hidden="true">
+  <div class="cart modal-dialog">
+    <div class="modal-content">
+        <div class="header text-center">
+            <h4 class="modal-title" id="myModalLabel2">Your cart:</h4>
+        </div>
+        <div class="modal-body js-cart_list c-cart">
+            <!-- added via js -->
+        </div>
+        <div class="footer">
+            <p>
+                Subtotal<span class="mini"> (excluding tax and shipping):</span> 
+                <span class="price js-price">€ 0</span>
+            </p>
+            <div class="btn" data-toggle="modal" data-target="#cart">Continue Shopping</div>
+             <a href="/checkout" class="btn blue">CHECKOUT</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;">
+    <div class="js-cart-item-tpl product">
+        <a href="" class="">
+            <div class="img-container">
+                <img class="card-img-top c-card__img" src="" alt="Card image cap">
+            </div>
+        </a>
+        <h4 class="js-cart-item-name"></h4>
+
+        <div class="dropdown js-dropdown">
+            <button class="btn btn-secondary dropdown-toggle qt" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                0
+            </button>
+            <div onclick="return false"  id="productQty" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">1</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">2</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">3</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">4</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">5+</a>
+            </div>
+        </div>
+        <h5 class="money">€ 0</h5>
+        <a onclick="removeProduct(this); return false" class="remove"><i class="material-icons">close</i></a>
+    </div>
+</div>
+
+    <header class="header trans_300" style="top: 0px;">
+        <nav class="c-header navbar navbar-inverse navbar-expand-lg navbar-light bg-white justify-content-center js-navbar" id="navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler float-sm-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="material-icons align-middle">dehaze</i>
+                </button>
+                <a class="navbar-brand w-25 mx-auto" href="/">
+                    <img src="{{logoURL}}" />
+                </a>
+                <div class="navbar-collapse collapse w-100" id="navbarSupportedContent">
+                    <ul class="navbar-nav w-100 justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link {{#ifEquals headerSection "home"}}active{{/ifEquals}}" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{#ifEquals headerSection "collections"}}active{{/ifEquals}}" href="/collections">Collezioni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pagine
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container">
+                                    <div class="row m-0">
+                                        <div class="col-sm-10 col-sm-offset-1 text-center">
+                                            <ul class="list-inline">
+                                                {{#each pages}}
+                                                    <li class="list-inline-item">
+                                                        <a href="/page/{{slug}}/{{number}}" title="title" class="nav-link">{{title}}</a>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{#if hasPosts}}
+                        <li class="nav-item">
+                            <a class="nav-link {{#ifEquals headerSection "blog"}}active{{/ifEquals}}" href="/blog">Blog</a>
+                        </li>
+                        {{/if}}
+
+                        {{#if helpPages.length}}
+                            {{#each helpPages}}
+                        <li class="nav-item">
+                            <a href="/page/{{slug}}/{{number}}" title="" class="nav-link">{{title}}</a>
+                        </li>
+                            {{/each}}
+                        {{/if}}
+                    </ul>
+                </div>
+                <ul class="text-right ml-auto mb-0 w-25 justify-content-end c-header__buttons list-inline">
+                    <li class="nav-item list-inline-item">
+                        <a class="nav-link" href="/user/account">
+                            <div class="btn btn-outline-gray e-btn-circle">
+                                <i class="material-icons">person</i>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item list-inline-item">
+                        <a class="nav-link" id="open-cart" data-toggle="modal" data-target="#cart">
+                            <div class="btn btn-outline-gray e-btn-circle">
+                                <i class="material-icons">shopping_cart</i>
+                                <span class="badge badge-primary" id="my-cart-count">0</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div id="afterAddToCart" class="modal" style="display:none">
+        <div class="col-6 c-addtocart">
+            <small>
+                <i class="fa fa-check"> </i> Hai aggiunto <b>1 prodotto</b> al carrello 
+                <i style="float: right;font-size: 1rem;" class="close fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+            </small>
+
+            <div class="item">
+                <img class="js-image" src="" style="max-width: 150px;">
+                <h4 class="js-name"></h4>
+                <h5 class="js-price"></h5>
+            </div>
+            <div class="total text-center">
+              <a href="/cart" class="btn btn-light mr-4">Visualizza il carrello</a>
+              <a href="/checkout" class="btn blue">Procedi all'acquisto</a>
+           </div>
+        </div>
+    </div>
+
+{{{body}}}
+</div>
+
+<footer class="c-footer">
+    <ul class="c-footer__list list-inline">
+        {{#each termsOfService}}
+            <li class="list-inline-item"><a href="/page/{{slug}}/{{number}}">{{title}}</a></li>
+        {{/each}}
+    </ul>
+    {{{bottom_line}}}
+    <img src="/public/assets/images/Brand/logo.svg" class="c-footer__logo" /><br />
+    <p class="c-footer__text">Powered by Vidra</p>
+</footer>
+
+<div style="display:none" class="backdrop" id="afterAddToCart open-cart" onclick="openCartAside(this); return false"></div>
+
+<div class="loader animated">
+    <div class="e-loading"></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="/public/assets/js/plugins.min.js"></script><!-- bootstrap plugins -->
+
+<script src="https://vidra-io.github.io/cdn/files/webshop/webshop-0.0.1.min.js" id="unique-cart"></script>
+
+<script src="/public/assets/js/main.min.js"></script>
+
+
+<script>
+    /*
+    $('#cart').on('shown.bs.modal', function () {
+    	console.log('****** open modal')
+        //$('#cart').trigger('focus')
+        $('#myModal').modal('show')
+    })
+    $('#cart').on('hidden.bs.modal', function () {
+        console.log('****** hide modal')
+        //$('#cart').trigger('focus')
+        $('#myModal').modal('hide')
+    })
+    */
+    /*
+    function openCartAside() {
+    	const cartAside = $('#cart');
+    	if (cartAside.hasClass('show d-block')) {
+            cartAside.removeClass('show d-block');
+        } else {
+            cartAside.addClass('show d-block');
+        }
+
+    }*/
+
+    function setCartCount(count) {
+        $('#my-cart-count').text(count);
+    }
+    function getTot(el) {
+        return el.cart.items.reduce((acc, el) => acc + parseInt(el.quantity), 0);
+    }
+    function removeProduct(id) {
+        const product_id = $(id).data('pid');
+            window.UniqueCart.removeFromCart(product_id)
+                    .done(function(data) {
+                        setCartCount(getTot({cart: data}));
+                        updateCartFlyout(data);
+                    }).fail(function(e) {
+                        console.log('err....', e);
+                    })
+
+    }
+    function updateQtyInput(id, qt, el) {
+    	/*
+    	const dropDown = `<div class="dropdown js-dropdown">
+            <button class="btn btn-secondary dropdown-toggle qt" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                0
+            </button>
+            <div onclick="return false"  id="productQty" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">1</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">2</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">3</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">4</a>
+                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">5+</a>
+            </div>
+        </div>`;
+        */
+    	const input = `<div class="edit-qt js-input my-auto">
+            <input oninput="changeQty(this)" type="number" class="quantity" name="" value="5">
+            <div onclick="updateInputProduct(this)" class="confirm-qt js-change-qty" style="display: none;">
+                <i class="far fa-check-circle"></i>
+            </div>
+        </div>`;
+    	const $parent = $(el).parent();
+    	const currQt = $(el).siblings('button').text();
+        if ((qt === '5+' || parseInt(qt) > 4) && $parent.hasClass('js-dropdown')) {
+        	const $newEl = $(input).clone();
+            $newEl.data('pid', id);
+            $newEl.find('input').val(currQt);
+            $parent.replaceWith($newEl)
+        }
+    }
+    function changeQty(el) {
+        $(el).siblings('.js-change-qty').css("display", "inline")
+    }
+    function sendUpdate(id, qt) {
+        window.UniqueCart.updateItemQt(id, qt)
+                .done(data => {
+                	console.log('**** update product', data, id, qt)
+                    setCartCount(getTot({cart: data}));
+                    updateCartFlyout(data);
+                    //$('#dropdownMenuButton').text(qt)
+                }).fail(function(e) {
+            console.log('err....', e);
+        })
+    }
+    function updateInputProduct(el) {
+        const id = $(el).parent().data('pid');
+        const qt = $(el).siblings('input.quantity').val();
+        sendUpdate(id, qt)
+    }
+    function updateProduct(el) {
+        const id = $(el).parent().data('pid');
+        const qt = $(el).text();
+        if (qt === '5+') {
+            const currQt = $(el).siblings('button').text();
+        	return updateQtyInput(id, qt, $(el).parent())
+        }
+        sendUpdate(id, qt)
+    }
+    function formatNumb(num) {
+        return num.toFixed(2).replace(/\./,',').replace(/\d(?=(\d{3})+\,)/g, '$&.');
+    }
+    function updateCartFlyout(cart) {
+        const cartList =  $('.js-cart_list');
+        $('span.js-price').html('€ '+ formatNumb(cart.total));
+        cartList.empty();
+        cart.items.forEach((i) => {
+        	console.log('***** el', i.quantity)
+            const item = $( ".js-cart-item-tpl" ).first().clone();
+            item.removeClass('js-cart-item-tpl');
+            item.find('img')
+                    .attr("src", i.image);
+            item.find('.js-cart-item-name').text(i.name);
+            item.find('.qt').text(i.quantity);
+            item.find('.money').text('€ ' + formatNumb(parseFloat(i.price)));
+            item.find('#productQty').data('pid', i.id);
+            item.find('.remove').data('pid', i.id);
+            cartList.append(item);
+            //item.appendTo(cartList);
+            //$('.sing-product-page').append('ciao')
+        });
+    }
+    if (window.UniqueCart) {
+        UniqueCart.subscribe('cart.ready', function (data) {
+            console.log('cart is ready', data);
+            updateCartFlyout(data.cart);
+            setCartCount(getTot(data));
+        });
+        UniqueCart.subscribe('item.added', function (data) {
+            updateCartFlyout(data.cart);
+            // this is a good place to track ecommerce events
+            // analytics.trackAddToCart(data.item_sent.name);
+
+            // set the cart count
+            setCartCount(getTot(data));
+
+            // show a modal for recap and checkout
+        
+            $('#afterAddToCart .js-image').attr('src', data.item_sent.image);
+            $('#afterAddToCart .js-name').text(data.item_sent.name);
+            $('#afterAddToCart .js-price').text(data.item_sent.price + ' €');
+            $('#afterAddToCart').modal();
+        });
+    }
+</script>
+
+{{#if customCSS}}
+    <style>
+        {{{customCSS}}}
+    </style>
+{{/if}}
+
+
+
+{{#if hasSecretScript}}
+    <script type="text/javascript">
+        $(function () {
+            /*
+            * adds 'secret' querystring param to each anchor's href
+            */
+            $("a").each(function() {
+                try {
+                    var href = this.href;
+                    if (href) {
+                        var url = new URL(href);
+                        url.searchParams.delete("secret");
+                        url.searchParams.append("secret","{{secret}}");
+                        this.href = url.href;
+                    }
+                } catch (e) {
+                    console.error("href: " + this.href, e);
+                    // TODO: send to error tracker?
+                }
+            });
+        })
+    </script>
+{{/if}}
+
+<script type="text/javascript">
+    function passwordInputController(elementId) {
+        const passwordInput = document.getElementById(elementId);
+        const inputElement = passwordInput.querySelector('input');
+        const icon = passwordInput.querySelector('i');
+        const visibilityElement = passwordInput.querySelector('span');
+        function toggleVisibility() {
+            if (inputElement.type === "password") {
+                icon.innerHTML = 'visibility';
+                inputElement.type = "text";
+            } else {
+                inputElement.type = "password";
+                icon.innerHTML = 'visibility_off';
+            }
+        }
+        visibilityElement.onclick = toggleVisibility;
+    }
+    if ( $( "#password-input" ).length ) {
+        passwordInputController('password-input');
+        passwordInputController('repeat-password');
+    }
+</script>
+
+</body>
+</html>

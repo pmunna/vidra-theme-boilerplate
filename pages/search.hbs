@@ -1,0 +1,142 @@
+
+<section class="t-page__section">
+  <div class="c-cards">
+    <div class="container">
+      <ul class="pagination">
+
+        <li class="page-item">
+          {{#if navigation.lastarr}}
+          <a class="page-link" href="{{navigation.lastarr}}">ultimi arrivi</a>
+          {{else}}
+          <a class="page-link active disabled">ultimi arrivi</a>
+          {{/if}}
+        </li>
+
+        <li class="page-item">
+          {{#if navigation.nameaz}}
+          <a class="page-link" href="{{navigation.nameaz}}">nome a-z</a>
+          {{else}}
+          <a class="page-link active disabled">nome a-z</a>
+          {{/if}}
+        </li>
+        {{!-- <span> | </span> --}}
+        <li class="page-item">
+          {{#if navigation.nameza}}
+          <a class="page-link" href="{{navigation.nameza}}">nome z-a</a>
+          {{else}}
+          <a class="page-link active disabled">nome z-a</a>
+          {{/if}}
+        </li>
+        {{!-- <span> | </span> --}}
+        <li class="page-item">
+          {{#if navigation.priceasc}}
+          <a class="page-link" href="{{navigation.priceasc}}">prezzo crescente</a>
+          {{else}}
+          <a class="page-link active disabled">prezzo crescente</a>
+          {{/if}}
+        </li>
+        {{!-- <span> | </span> --}}
+        <li class="page-item">
+          {{#if navigation.pricedesc}}
+          <a class="page-link" href="{{navigation.pricedesc}}">prezzo decrescente</a>
+          {{else}}
+          <a class="page-link active disabled">prezzo decrescente</a>
+          {{/if}}
+        </li>
+    </div>
+  </div>
+</section>
+
+<section class="t-page__section">
+  <div class="c-cards">
+    <div class="container">
+      <form action="/search" method="get" class="input-group search-bar search-bar--page" role="search">
+
+        <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field"
+          aria-label="Search our store">
+        <span class="input-group-btn">
+          <button type="submit" class="btn icon-fallback-text">
+            <span class="icon icon-search" aria-hidden="true"></span>
+            <span class="fallback-text">Search</span>
+          </button>
+        </span>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section class="t-page__section">
+  <div class="c-cards">
+    <div class="container">
+      {{#if searchQuery}}
+        {{#ifNotEquals total 0}} <p>Risultati ricerca per: {{searchQuery}}</p>{{/ifNotEquals}}
+        {{#ifEquals total 0}} <p>Nessun risultato</p> {{/ifEquals}}
+      {{else}}
+        <p>Ricerca</p>
+      {{/if}}
+    </div>
+  </div>
+</section>
+
+
+<section class="t-page__section">
+  <div class="c-cards">
+    <div class="container">
+      <div class="row">
+        {{#each products}}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card c-card__item">
+            {{#if isNew}}
+            <span class="badge badge-pill badge-success c-card__badge c-card__badge--sx">New</span>
+            {{/if}}
+            <img class="card-img-top c-card__img" src="{{firstImage}}" alt="Card image cap">
+            <div class="card-body c-card__body">
+              <h5 class="card-title c-card__title">{{name}}</h5>
+              <span class="c-card__price">{{price}}</span>
+              <div class="clearfix"></div>
+              <a href="/p/{{slug}}/{{sku}}" class="btn btn-primary">Vai al prodotto</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="t-page__section">
+  <div class="c-cards">
+    <div class="container">
+      <ul class="pagination">
+        <li class="page-item">
+          {{#if paginator.prev}}
+          <a class="page-link" href="{{paginator.prev}} ">&lt;</a>
+          {{else}}
+          <a class="page-link disabled">&lt;</a>
+          {{/if}}
+        </li>
+        <li class="page-item">
+          <a class="page-link disabled">pagina {{paginator.current}} di {{paginator.totalPage}}</a>
+        </li>
+        {{#if paginator.next}}
+        <a class="page-link" href="{{paginator.next}}">&gt;</a>
+        {{else}}
+        <a class="page-link disabled">&gt;</a>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="c-prefooter">
+  <div class="c-prefooter__text">
+    <strong>PAY WITH:</strong><br />
+    <ul class="list-inline">
+      <li class="list-inline-item"><img src="/public/assets/images/Brand/MASTERCARD.png" /></li>
+      <li class="list-inline-item"><img src="/public/assets/images/Brand/VISA.png" /></li>
+
+    </ul>
+  </div>
+</div>

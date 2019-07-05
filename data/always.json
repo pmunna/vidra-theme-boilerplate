@@ -1,0 +1,136 @@
+{
+  "title": "Titolo pagina",
+  "description": "Descrizione della pagina",
+  "canonical": "/",
+  "customCss": "h1{color: blue;}",
+  "bottomLine": "My shop: partita IVA 1234556778",
+  "pages": [
+    {
+      "title": "T1",
+      "slug": "slug1",
+      "number": 0,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "T2",
+      "slug": "slug2",
+      "number": 1,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "T3",
+      "slug": "slug3",
+      "number": 2,
+      "body": "Paragrafo1\n**subtitle**"
+    }
+  ],
+  "slides": [
+    {
+      "cover_image": "public/assets/images/slider/slider-1.jpg",
+      "title": "second img",
+      "body": "best products",
+      "meta_title": "best_products"
+    },
+    {
+      "cover_image": "public/assets/images/slider/slider-1.jpg",
+      "title": "second img",
+      "body": "best products",
+      "meta_title": "best_products"
+    }
+  ],
+  "lastArrivedProducts": [{
+    "sku": "jumpsuit_rober",
+	"name": "THE ONLY ROBER Tuta jumpsuit",
+	"slug": "slug-prodottoj",
+	"brand": "Free people",
+	"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+	"price": 129.99,
+	"qt": 10,
+	"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@10.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@11.jpg", "https://mosaic03.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@8.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@6.jpg", "https://mosaic03.ztat.net/vgs/media/packshot/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@7.jpg"],
+	"tags": [
+		"tag1", "tag2"
+	],
+	"barcode": "02135678",
+	"depth": 12,
+	"height": 4,
+	"width": 11,
+	"weight": 100,
+	"isNew": true
+  }],
+  "helpPages": [
+    {
+      "title": "Chi Siamo",
+      "slug": "chi-siamo",
+      "number": 0,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "Contattaci",
+      "slug": "contattaci",
+      "number": 1,
+      "body": "Paragrafo1\n**subtitle**"
+    }
+  ],
+  "headerSection": "home",
+  "logoURL": "/public/icon.ico",
+  "termsOfService": [
+    {
+      "title": "Terms of Service",
+      "slug": "tos",
+      "number": 0,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "Shipping and Returns",
+      "slug": "shipping-and-returns",
+      "number": 1,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "Payment methods",
+      "slug": "payment-methods",
+      "number": 1,
+      "body": "Paragrafo1\n**subtitle**"
+    },
+    {
+      "title": "Privacy Policy",
+      "slug": "privacy",
+      "number": 1,
+      "body": "Paragrafo1\n**subtitle**"
+    }
+  ],
+  "hasHomePageCollection": false,
+  "hasNoHomePageCollection": true,
+  "allCollections": [
+    {
+      "name": "Nome collezione",
+      "slug": "slug-collezione",
+      "external_id": "clz-1",
+      "description": "<p>Descrizione in html</p>",
+      "meta_title": "titolo per i campi meta",
+      "meta_description": "descrizione per i campi meta",
+      "image": "https://torange.biz/photo/42/IMAGE/creation-pottery-making-products-made-clay-42406.jpg",
+      "products": [{
+        "sku": "sku-prod1",
+        "name": "Prodotto1"
+      }]
+    },
+    {
+      "name": "Nome collezione2",
+      "slug": "slug-collezione2",
+      "external_id": "clz-2",
+      "description": "<p>Descrizione in html</p>",
+      "meta_title": "titolo per i campi meta",
+      "meta_description": "descrizione per i campi meta",
+      "image": "https://torange.biz/photo/42/IMAGE/creation-pottery-making-products-made-clay-42406.jpg",
+      "products": [{
+        "sku": "sku-prod1",
+        "name": "Prodotto1"
+      },
+      {
+        "sku": "sku-prod2",
+        "name": "Prodotto2"
+      }]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+    "cart": {
+        "items": [{
+            "image": "https://cdn-img.vidra.io/staging-jopshop478/1545313424473-SOFFICINILIMITED.png",
+            "description": "<p>Gli inimitabili Sofficini con ripieno al gusto di Salsiccia e Patate e Mozzarella extra filante sono extra croccanti! Prova questo e anche gli altri mitici gusti Sofficini!</p>\n<ul>\n<li>\n<p><strong>✓</strong> Più Ripieno</p>\n</li>\n<li>\n<p><strong>✓</strong> Più Mozzarella</p>\n</li>\n<li>\n<p><strong>✓</strong> Più golosi che mai</p>\n</li>\n<li>\n<p><strong>✓</strong> Crema di patate e salsiccia più mozzarella</p>\n</li>\n</ul>\n",
+            "weight": 1.4,
+            "url": "http://deletememe.staging.vidra.shop/findus-sofficini-salsiccia-e-patate-piu-mozzarella/sfc-spm.json",
+            "id": "sfc-spm",
+            "price": 2.49,
+            "name": "Sofficini Salsiccia e Patate Più Mozzarella",
+            "virtual": false,
+            "quantity": 1
+        },
+        {
+            "image": "https://cdn-img.vidra.io/staging-jopshop478/1545313424473-SOFFICINILIMITED.png",
+            "description": "<p>Gli inimitabili Sofficini con ripieno al gusto di Salsiccia e Patate e Mozzarella extra filante sono extra croccanti! Prova questo e anche gli altri mitici gusti Sofficini!</p>\n<ul>\n<li>\n<p><strong>✓</strong> Più Ripieno</p>\n</li>\n<li>\n<p><strong>✓</strong> Più Mozzarella</p>\n</li>\n<li>\n<p><strong>✓</strong> Più golosi che mai</p>\n</li>\n<li>\n<p><strong>✓</strong> Crema di patate e salsiccia più mozzarella</p>\n</li>\n</ul>\n",
+            "weight": 1.4,
+            "url": "http://deletememe.staging.vidra.shop/findus-sofficini-salsiccia-e-patate-piu-mozzarella/sfc-spm.json",
+            "id": "sfc-spm",
+            "price": 2.49,
+            "name": "Sofficini Salsiccia e Patate Più Mozzarella",
+            "virtual": false,
+            "quantity": 1
+        }],
+        "total": 2.49,
+        "weight": 1.4
+    }
+}

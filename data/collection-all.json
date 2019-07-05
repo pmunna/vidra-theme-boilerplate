@@ -1,0 +1,133 @@
+{
+  "products": [
+	{
+		"sku": "jumpsuit_rober",
+		"name": "THE ONLY ROBER Tuta jumpsuit",
+		"slug": "slug-prodottoj",
+		"brand": "Free people",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 129.99,
+		"qt": 10,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@10.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@11.jpg", "https://mosaic03.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@8.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@6.jpg", "https://mosaic03.ztat.net/vgs/media/packshot/pdp-zoom/FP/02/1C/05/LJ/11/FP021C05L-J11@7.jpg"],
+		"tags": [
+			"tag1", "tag2"
+		],
+		"barcode": "02135678",
+		"depth": 12,
+		"height": 4,
+		"width": 11,
+		"weight": 100,
+		"isNew": true
+	},
+	{
+		"sku": "blazer_nero",
+		"name": "Blazer nero",
+		"slug": "abbigliamento",
+		"brand": "Elisabetta Franchi",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 384.99,
+		"qt": 10,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/EF/12/1G/00/CQ/11/EF121G00C-Q11@9.jpg", "https://mosaic03.ztat.net/vgs/media/pdp-zoom/EF/12/1G/00/CQ/11/EF121G00C-Q11@8.jpg", "https://mosaic04.ztat.net/vgs/media/packshot/pdp-zoom/EF/12/1G/00/CQ/11/EF121G00C-Q11@7.jpg", "https://mosaic03.ztat.net/vgs/media/pdp-zoom/EF/12/1G/00/CQ/11/EF121G00C-Q11@6.jpg"],
+		"tags": [
+			"tag1", "tag2"
+		],
+		"barcode": "02135678",
+		"depth": 12,
+		"height": 4,
+		"width": 11,
+		"weight": 100,
+		"isNew": false
+	},
+	{
+		"sku": "camicetta",
+		"name": "Camicetta rosa",
+		"slug": "abbigliamento",
+		"brand": "Elisabetta Franchi",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 244.99,
+		"qt": 10,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/EF/12/1E/01/DJ/11/EF121E01D-J11@8.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/EF/12/1E/01/DJ/11/EF121E01D-J11@3.jpg"],
+		"tags": [
+			"tag1", "tag2"
+		],
+		"barcode": "02135678",
+		"depth": 12,
+		"height": 4,
+		"width": 11,
+		"weight": 100,
+		"isNew": false
+	},
+	{
+		"sku": "occhiali_da_sole",
+		"name": "Occhiali da sole",
+		"slug": "accessori",
+		"brand": "Mint&Berry",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 17.99,
+		"qt": 10,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/M3/25/1K/00/5Q/11/M3251K005-Q11@6.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/M3/25/1K/00/5Q/11/M3251K005-Q11@7.jpg"],
+		"tags": [
+			"tag1", "tag2"
+		],
+		"barcode": "02135678",
+		"depth": 12,
+		"height": 4,
+		"width": 11,
+		"weight": 100,
+		"isNew": false
+	},
+	{
+		"sku": "lenora_belt_cintura",
+		"name": "LEONORA BELT - Cintura",
+		"slug": "accessori",
+		"brand": "Gina Tricot",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 20.00,
+		"qt": 20,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/GI/D5/1D/00/7Q/11/GID51D007-Q11@3.jpg", "https://mosaic04.ztat.net/vgs/media/pdp-zoom/GI/D5/1D/00/7Q/11/GID51D007-Q11@7.jpg"],
+		"tags": [
+			"tag2", "tag3"
+		],
+		"barcode": "02235678",
+		"depth": 22,
+		"height": 4,
+		"width": 22,
+		"weight": 200,
+		"isNew": false
+	},
+	{
+		"sku": "chunky_hoop_3",
+		"name": "Chunky Hoop 3 Pack Gold",
+		"slug": "accessori",
+		"brand": "Missguided",
+		"description": "<p>DLa canotta Jordan 23 Lux - Uomo è caratterizzata da leggeri inserti in mesh e realizzata in resistente tessuto non tagliato per un comfort traspirante che dura a lungo.</p><ul><li>Resistente tessuto non tagliato per morbidezza e comfort</li><li>Inserto posteriore in mesh per una traspirabilità mirata</li><li>Bordo posteriore allungato per una copertura ottimale</li><li>Bordo con spacchetti per una libertà di movimento naturale</li><li>Tessuto: Corpo: 72% poliestere/25% rayon/3% spandex. Mesh: 64% poliestere/36% rayon.</li><li>Lavabile in lavatrice</li><li>Prodotto importato</li></ul>",
+		"price": 15.99,
+		"qt": 20,
+		"images": ["https://mosaic03.ztat.net/vgs/media/pdp-zoom/M0/Q5/1L/02/6F/11/M0Q51L026-F11@7.jpg","https://mosaic04.ztat.net/vgs/media/pdp-zoom/M0/Q5/1L/02/6F/11/M0Q51L026-F11@3.jpg"],
+		"tags": [
+			"tag2", "tag3"
+		],
+		"barcode": "02235678",
+		"depth": 22,
+		"height": 4,
+		"width": 22,
+		"weight": 200,
+		"isNew": false
+	}
+  ],
+  "tags": ["tag1","tag2","tag3", "tag4", "tag5"],
+  "activeTag": "tag1",
+  "navigation": {
+    "nameaz": "/url_nameaz",
+    "nameza": "/url_nameza",
+    "pricedesc": "/url_pricedesc",
+    "priceasc": "/url_priceasc",
+    "lastarr": "/url_lastarr"
+  },
+  "paginator": {
+    "prev": "/url-to-prev-page",
+    "next": "/url-to-next-page",
+    "current": 1,
+    "totalPage": 10
+  }
+}

@@ -1,0 +1,104 @@
+<section class="t-page__section c-profile">
+  <div class="container">
+     <div class="row text-center">
+       <div class="col title">
+          <p><a href="/user/account/orders">I tuoi ordini</a> / Dettaglio ordine</p>
+          <h3>Ordine <span style="text-transform:uppercase;">{{order.id}}</span></h3>
+       </div>
+     </div>
+    <div class="row">
+      <div class="col-3 side-navigation">
+          <ul>
+            <li class="welcome">
+              Benvenuto, {{account.name}}
+            </li>
+            <li>
+              <a href="/user/account">Dati utente</a>
+            </li>
+            <li class="active">
+              <a href="/user/account/orders">I tuoi ordini</a>
+            </li>
+            <li>
+              <a href="/logout">Log out</a>
+            </li>
+          </ul>
+      </div>
+      <div class="col-9">
+
+        <div class="body-head">
+          <div class="head-title">
+             <div class="column">
+                <span><h4>Data: </h4><p class="break-date">{{order.created}}</p></span>
+                <span><h4>Totale: </h4><p>{{order.total}} €</p></span>
+              </div>
+              <div class="column mt-0">
+                <span><h4>Stato spedizione: </h4>
+                  {{#ifEquals order.status "CREATED" }}
+                    <p class="correct"><i data-toggle="tooltip" class="fas fa-info-circle" title="L'ordine è stato confermato"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "WORKING_ON" }}
+                    <p class="correct"><i class="fas fa-info-circle" title="L'ordine è in lavorazione"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "READY" }}
+                    <p class="correct"><i class="fas fa-info-circle" title="In attesa di ritiro da parte del corriere"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "SHIPPED" }}
+                    <p class="correct"><i class="fas fa-info-circle" title="L'ordine è stato spedito"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "READY" }}
+                    <p class="correct"><i class="fas fa-info-circle" title="L'ordine è stato consegnato"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "UNKNOWN" }}
+                    <p class="waiting"><i class="fas fa-exclamation-circle" title="Impossibile ottenere informazioni sullo stato dell'ordine"></i></p>
+                  {{/ifEquals}}
+                  {{#ifEquals order.status "CANCELLED" }}
+                    <p class="error"><i class="fas fa-exclamation-circle" title="L'ordine è stato annullato"></i></p>
+                  {{/ifEquals}}
+                </span>
+              </div>
+          </div>
+          <div>
+            <a class="btn btn-circle"><i class="fas fa-print" onclick="window.print();return false;"></i></a>
+            {{#if order.tracking.url}}
+              <a href="{{order.tracking.url}}" class="btn btn-dark">Traccia spedizione</a>
+            {{/if}}
+          </div>
+        </div>
+
+<div class="list mb-4">
+        {{#each order.cart.items}}
+          <div class="product">
+            <img src="{{image}}">
+            <div class="text">
+              <h4>{{name}}</h4>
+              <!--<p>{{{description}}}</p>-->
+            </div>
+            <div class="amount">{{#ifNotEquals '1' quantity}}{{#ifNotEquals '0' quantity}}x{{quantity}}{{/ifNotEquals}}{{/ifNotEquals}}</div>
+            <div class="price">{{price}} €</div>
+          </div>
+        {{/each}}
+          <div class="total">
+            <div></div>
+            <div>
+              <!--<div class="sub">
+                <span class="float-left">Articoli</span><span>€ </span>
+              </div>-->
+              <div class="sub">
+                <span class="float-left">Spedizione</span><span>
+                  {{#ifEquals '0' order.shipment.rate.cost}}
+                    0
+                    {{else}}
+                      {{order.shipment.rate.cost}}
+                  {{/ifEquals}}€</span>
+              </div>
+              <div class="main">
+                <span class="float-left">Totale</span><span>{{order.total}} €</span>
+              </div>
+            </div>
+         </div>
+        </div>
+
+        <a href="/user/account/orders" class="btn btn-outline-light">Torna agli ordini</a>
+    </div>
+  </div>
+</section>

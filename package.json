@@ -1,0 +1,27 @@
+{
+  "name": "default",
+  "version": "1.0.0",
+  "description": "default theme",
+  "main": "index.js",
+  "scripts": {
+    "start": "hbs-server",
+    "start:dev": "nodemon --exec hbs-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "node buildZip.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vidra-io/bright-minimalist-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vidra-io/bright-minimalist-theme/issues"
+  },
+  "homepage": "https://github.com/vidra-io/bright-minimalist-theme#readme",
+  "dependencies": {
+    "jsurl": "^0.1.5",
+    "nodemon": "^1.19.0",
+    "webshop-theme-kit": "github:vidra-io/webshop-theme-kit#0.4.3"
+  }
+}

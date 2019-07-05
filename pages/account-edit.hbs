@@ -1,0 +1,62 @@
+<section class="t-page__section c-profile">
+  <div class="container">
+     <div class="row text-center">
+       <div class="col title">
+          <p>Dati utente</p>
+          <h3>Modifica dati</h3>
+       </div>
+     </div>
+    <div class="row">
+      <div class="col-3 side-navigation">
+          <ul>
+            <li class="welcome">
+              Benvenuto, {{account.name}}
+            </li>
+            <li class="active">
+              <a href="/user/account">Dati utente</a>
+            </li>
+            <li>
+              <a href="/user/account/orders">I tuoi ordini</a>
+            </li>
+            <li>
+              <a href="/logout">Log out</a>
+            </li>
+          </ul>
+      </div>
+      <div class="col-9">
+
+        <form id="edit" method="POST" class="card mb-4">
+          <div class="header">
+            <div class="head-title">
+              <h4>Dati utente</h4>
+            </div>
+            <div class="actions">
+            </div>
+          </div>
+          <div class="body">
+            <div class="campo">
+              <div class="text">
+                  <h4>Nome</h4>
+                  <input required name="name" type="text" id="nome" aria-describedby="nome" placeholder="Nome Cognome" value="{{account.name}}">
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>E-mail</h4>
+               <input required name="email" type="email" id="email" aria-describedby="email" placeholder="mail@mail.it" value="{{account.email}}">   
+              </div>
+            </div>
+            <div class="campo">
+              <div class="text">
+                <h4>Telefono</h4>
+                <input required name="phone" type="" id="telefono" aria-describedby="telefono" placeholder="347 1234567" value="{{account.phone}}">              
+              </div>
+            </div>
+          </div>
+          <div class="save">
+            <button type="submit" class="btn ml-auto"><i class="fas fa-check-circle"></i> Salva</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</section>
