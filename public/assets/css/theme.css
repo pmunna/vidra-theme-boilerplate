@@ -10973,3 +10973,23 @@ img.product{
 a.remove{
   margin: auto;
 }
+
+.input-group.search-bar{
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto max-content;
+}
+.input-group.search-bar input{
+  border-radius: 50px 0 0 50px;
+    height: 3rem;
+    padding: 0 2rem;
+    border: 2px solid #efeff1;
+}
+.input-group.search-bar .input-group-btn button{
+  padding: 0 2rem;
+  line-height: 3rem;
+  border: 0;
+  border-radius: 0 50px 50px 0;
+  background: #efeff1;
+  font-size: 1rem;
+}
