@@ -1,22 +1,14 @@
 
-<section class="t-page__section c-product">
-
-  <div class="c-cards">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-          <div class="card c-card__item error">
-
-            <h1>{{message}}</h1>
-            <h2>{{status}}</h2>
-
-            {{#if back}}
-            <a href="javascript:history.back()" class="btn btn-primary" role="button">Indietro</a>
-            {{/if}}
-          </div>
-        </div>
-      </div>
+<!--Pagina di errori-->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+        <h1 class="my-5">{{message}}</h1>
+        <h2 class="mb-5">{{status}}</h2>
+        {{#if back}}
+          <a href="javascript:history.back()" class="btn btn-primary mb-5" role="button">Indietro</a>
+        {{/if}}
     </div>
   </div>
+</div>
 
-</section>

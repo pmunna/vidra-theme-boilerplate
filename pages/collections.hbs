@@ -1,31 +1,26 @@
-
-<section class="t-page__section">
-
-  <div class="c-cards">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 d-block d-md-none title-page">
-         <h4>Collezioni</h4> 
-        </div>
-        {{#each allCollections}}
-		<div class="col-lg-4 col-6">
-		  <a href="/collections/{{slug}}/{{external_id}}" class="">
-			  <div class="card c-card__item">
-				<div class="img-container">
-					<img class="card-img-top c-card__img" src="{{image}}" alt="Card image cap">
-				</div>
-				<div class="card-body c-card__body">
-				  <h5 class="card-title c-card__title">{{name}}</h5>
-				  <div class="clearfix"></div>
-				</div>
-			  </div>
-			</a> 
+<!--Lista delle collezioni-->
+<div class="container">
+  <div class="row justify-content-center">
+		<div class=" text-center col-12 my-5">
+			<h1>
+				Collezioni
+			</h1>
 		</div>
-					
-					
-        {{/each}}
-      </div>
-    </div>
+	</div>
+  <div class="row">
+    {{#each allCollections}}
+    <div class="col-6 mb-4">
+      <a href="{{url}}">
+        <div class="card">
+          <div class="card-img-top-container">
+            <img class="card-img-top" src="{{#if image}}{{image}}{{else}}../public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> 
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+          </div>
+        </div>
+      </a> 
+    </div>	
+    {{/each}}
   </div>
-
-</section>
+</div>

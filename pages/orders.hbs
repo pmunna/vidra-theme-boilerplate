@@ -1,79 +1,86 @@
-<section class="t-page__section c-profile">
-  <div class="container">
-     <div class="row text-center">
-       <div class="col title">
-          <p>Dati utente / Ordini</p>
-          <h3>Ordini</h3>
-       </div>
-     </div>
-    <div class="row">
-      <div class="col-3 side-navigation">
-          <ul>
-            <li class="welcome">
-              Benvenuto, {{account.name}}
-            </li>
-            <li>
-              <a href="/user/account">Dati utente</a>
-            </li>
-            <li class="active">
-              <a href="/user/account/orders">I tuoi ordini</a>
-            </li>
-            <li>
-              <a href="/logout">Log out</a>
-            </li>
-          </ul>
-      </div>
-      <div class="col-9">
-
-    {{#each orders}}
-      <div class="card mb-4">
-        <div class="header">
-          <div class="head-title">
-            <div class="ordine">
-              <h4>Numero ordine:</h4>
-              <p>{{id}}</p>
-            </div>
-            <div class="column">
-              <span><h4>Data: </h4><p class="break-date">{{created}}</p></span>
-              <span><h4>Totale: </h4><p>{{total}} €</p></span>
-            </div>
-            <div class="column mt-0">
-              <!--<span class="correct"><h4>Stato pagamento: </h4><p><i class="fas fa-check-circle"></i> Completato</p></span>-->
-              <!--<span class="waiting"><h4>Stato spedizione: </h4><p><i class="fas fa-exclamation-circle"></i> In attesa</p></span>-->
-            </div>
-          </div>
-          <div class="actions">
-            <a href="/user/account/orders/{{id}}">Dettagli ordine</a>
-          </div>
-        </div>
-        <div class="body">
-          {{#each cart.items}}
-          <div class="campo">
-            <img class="product" src="{{image}}"/>
-            <div class="text">
-              <h4>{{name}}</h4>
-              <p>€ {{price}}</p>
-            </div>
-            {{#ifNotEquals '1' quantity}}{{#ifNotEquals '0' quantity}}<div class="amount">x{{quantity}}</div>{{/ifNotEquals}}{{/ifNotEquals}}
-          </div>
-          {{/each}}
-        </div>
-      </div>
-      {{else}}
-      <div class="body-head">
-        <div class="text error">
-          <h3>
-            Non hai ancora fatto un acquisto.
-          </h3>
-          <p>
-            Perchè non diventi subito un cliente? <br/>
-            <a href="/">Compra qualcosa!</a>
-          </p>
-        </div>
-      </div>
-      {{/each}}
+<!--Lista di ordini nella sezione account-->
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 text-center my-5">
+      <h1 class="page-title">
+        Ordini
+      </h1>
     </div>
   </div>
-</section>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <ul class="nav">
+        <li class="nav-item">
+          <div class="nav-link">Benvenuto, {{account.name}}</div>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/user/account">Dati utente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/user/account/orders">I tuoi ordini</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      {{#each orders}}
+        <div class="card my-5">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5 class="card-title">Numero ordine:</h5>
+              <p class="card-text">{{id}}</p>
+              <a href="/user/account/orders/{{id}}">Dettagli ordine</a>
+            </li>
+            <li class="list-group-item">
+              <h5 class="card-title">Data:</h5>
+              <p class="card-text">{{formatDate created "DD/MM/YY"}}</p>
+            </li>
+            <li class="list-group-item">
+              <h5 class="card-title">Totale:</h5>
+              <p class="card-text">{{total}}</p>
+            </li> 
+          </ul>
+          <div class="modal-body">
+            <table>
+              <tbody>
+                {{#each cart.items}}
+                  <tr>
+                      <th class="p-2">
+                          <img class="object-fit-4" src="{{image}}"/>
+                      </th>
+                      <th class="p-2 w-100">
+                          <h4 class="mb-0 mr-2">{{name}}</h4>
+                      </th>
+                      <th class="p-2 min">
+                          <h5 class="mb-0">€ {{price}}</h5>
+                      </th>
+                      <th>
+                        {{#ifNotEquals '1' quantity}}{{#ifNotEquals '0' quantity}}<div class="amount">x{{quantity}}</div>{{/ifNotEquals}}{{/ifNotEquals}}
+                      </th>
+                  </tr>
+                  {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {{else}}
+          <div class="body-head">
+            <div class="my-5">
+              <h3>
+                Non hai ancora fatto un acquisto.
+              </h3>
+              <p>
+                Perchè non diventi subito un cliente? <br/>
+                <a href="/">Compra qualcosa!</a>
+              </p>
+            </div>
+          </div>
+        {{/each}}
+  </div>
+</div>
 
 

@@ -1,37 +1,42 @@
 
-<section class="t-page__section c-product">
   <div class="container">
-    {{#each posts}}
     <div class="row">
-      <div class="col">
-        <a href="/blog/{{slug}}/{{number}}"><h1 class="text-center">{{title}}</h1></a>
-        {{{body}}}
-        <h1>&nbsp;</h1>
-      </div>
+      <div class="col-12 text-center my-5">
+        <h1 class="page-title">
+          Blog
+        </h1>
+		  </div>
+      {{#each posts}}
+        <div class="col-md-4 mb-4">
+          <a href="/blog/{{slug}}/{{number}}">
+            <div class="card">
+              <div class="card-img-top-container">
+                <img class="card-img-top" src="{{#if cover_image}}{{cover_image}}{{else}}../public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> 
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{meta_description}}</p>
+                <h6 class="card-subtitle">{{formatDate created "DD/MM/YY"}}</h6>
+              </div>
+            </div>
+          </a> 
+        </div>	
+      {{/each}}
     </div>
-    {{/each}}
-</section>
 
-<section class="t-page__section">
-  <div class="c-cards">
-    <div class="container">
-      <ul class="pagination">
-        <li class="page-item">
-            {{#if paginator.prev}}
-            <a class="page-link" href="{{paginator.prev}} ">&lt;</a>
-            {{else}}
-            <a class="page-link disabled">&lt;</a>
-            {{/if}}
-        </li>
-        <li class="page-item">
-            <a class="page-link disabled">pagina {{paginator.current}} di {{paginator.totalPage}}</a>
-        </li>
-        {{#if paginator.next}}
-            <a class="page-link" href="{{paginator.next}}">&gt;</a>
-            {{else}}
-            <a class="page-link disabled">&gt;</a>
+    <div class="row  mt-3">
+      <div class="col d-flex justify-content-end">
+        {{#if paginator.prev}}
+          <a class="page-link pagination d-flex" href="{{paginator.prev}} "><i class="material-icons">chevron_left</i></a>
+        {{else}}
+          <a class="page-link pagination d-flex disabled"><i class="material-icons">chevron_left</i></a>
         {{/if}}
-      </ul>
+        <a class="page-link pagination disabled d-flex">Pagina {{paginator.current}} di {{paginator.totalPage}}</a>
+      {{#if paginator.next}}
+        <a class="page-link pagination d-flex" href="{{paginator.next}}"><i class="material-icons">chevron_right</i></a>
+      {{else}}
+        <a class="page-link pagination disabled d-flex"><i class="material-icons">chevron_right</i></a>
+      {{/if}}
     </div>
   </div>
-</section>
+</div>

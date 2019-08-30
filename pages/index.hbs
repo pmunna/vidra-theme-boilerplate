@@ -1,52 +1,44 @@
-<section id="home" class="t-page__section">
-  <div class="c-cards">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center mb-5">
-          <h1>{{shop.name}}</h1>
-        </div>
-        {{#each products}}
-        <div class="col-lg-4 col-md-6 col-sm-6 col-6">
-          <a href="{{url}}">
-            <div class="card c-card__item">
-              {{#if isNew}}
-              <span class="badge badge-pill badge-success c-card__badge c-card__badge--sx">New</span>
-              {{/if}}
-              <div class="img-container">
-                <img class="card-img-top c-card__img" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}">
-              </div>
-              <div class="card-body c-card__body">
-
-                <h5 class="card-title c-card__title">{{name}}</h5>
-                <span class="c-card__price">{{price}}</span>
-                <div class="clearfix"></div>
-            
-              </div>
-            </div>
-			    </a> 
-        </div>
-        {{/each}}
-        </div>
-      <div class="row justify-content-center">
-        <div class=" mt-5 col-12 text-center mb-5">
-          <h1>Collezioni</h1>
-        </div>
-{{#each allCollections}}
-        <div id="collection" class="col-6">
-          <a href="{{url}}">
-            <div class="card c-card__item">
-            <div class="img-container">
-              <img class="card-img-top c-card__img" src="{{image}}" alt="{{name}}">
-            </div>
-            <div class="card-body c-card__body">
-              <h5 class="card-title c-card__title">{{name}}</h5>
-              <div class="clearfix"></div>
-            </div>
-            </div>
-          </a> 
-        </div>	
-    {{/each}}
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center my-5">
+      <h1>{{shop.name}}</h1> <!--Nome dell shop. Modificabile dalla Dashboard > Canali > Shop > Configurazione > Nome-->
     </div>
+    {{#each products}} <!--Mostra ogni prodotto dal primo all'ultimo (ord. di aggiunta dal più vecchio). Nell'index vengono mostrati fino a massimo 12 prodotti-->
+    <div class="col-6 mb-4">
+      <a href="{{url}}">
+        <div class="card">
+          {{#if isNew}} <span class="badge badge-primary">New</span>  {{/if}}
+          <div class="card-img-top-container">
+            <img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <span>€ {{price}}</span>
+          </div>
+        </div>
+      </a> 
+    </div>
+    {{/each}}
   </div>
-</section>
+
+  <div class="row justify-content-center">
+    <div class=" mt-5 col-12 text-center mb-5">
+      <h1>Collezioni</h1>
+    </div>
+    {{#each allCollections}}<!--Ciclo each per mostrare le collezioni-->
+    <div class="col-6 mb-4">
+      <a href="{{url}}">
+        <div class="card">
+          <div class="card-img-top-container">
+            <img class="card-img-top" src="{{#if image}}{{image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> 
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+          </div>
+        </div>
+      </a> 
+    </div>	
+    {{/each}}
+  </div>
+</div>
+

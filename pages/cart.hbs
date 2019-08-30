@@ -1,52 +1,63 @@
-<section class="t-page__section c-cart">
+<section class="cart">
   <div class="container">
       <div class="row text-center">
-       <div class="col title">
-          <h3 class="mb-0">Carrello</h3>
-       </div>
-     </div>
-      <form class="row justify-content-center mt-5" method="POST"> 
-          <div class="col-8">
-            {{#each cart.items}}
-              <div class="product">
-                  <a target="_blank" href="/p/{{this.id}}/{{this.id}}" class="">
-                    <div class="img-container">
-                        <img class="card-img-top c-card__img" src="{{this.image}}" alt="{{this.name}}"/>
-                    </div>
-                  </a>
-                    <h4><a target="_blank" href="/p/{{this.id}}/{{this.id}}">{{this.name}}</a></h4>
-                  {{#ifCond this.quantity '<' 5}}
-                    <div class="select_box">
-                      <select onchange="this.form.submit()" class="" name="items[{{@index}}][quantity]" id="select">
-                        <option {{#ifEquals this.quantity 1}}selected="selected"{{/ifEquals}} value="1">1</option>
-                        <option {{#ifEquals this.quantity 2}}selected="selected"{{/ifEquals}} value="2">2</option>
-                        <option {{#ifEquals this.quantity 3}}selected="selected"{{/ifEquals}} value="3">3</option>
-                        <option {{#ifEquals this.quantity 4}}selected="selected"{{/ifEquals}} value="4">4</option>
-                        <option {{#ifEquals this.quantity 5}}selected="selected"{{/ifEquals}} value="5">5+</option>
-                        <option value="0">Rimuovi</option>
-                      </select>
-                    </div>
-                  {{/ifCond}}
-                  {{#ifCond this.quantity '>' 4}}
-                    <input onchange="this.form.submit()" type="number" class="quantity" name="items[{{@index}}][quantity]" value="{{this.quantity}}">
-                  {{/ifCond}}
-
-                <input type="hidden" name="items[{{@index}}][id]" value="{{this.id}}">
-                <h5>{{price}} €</h5>
-                <button type="submit" value="{{this.id}}" class="remove btn btn-link" name="remove">
-                  <i class="material-icons">close</i>
-                </button>
-              </div>
-            {{/each}}
+        <div class="col-12 my-5">
+          <h1 class="page-title">
+            Carrello
+          </h1>
+        </div>
+      </div>
+      <form method="POST"> <!--Form per la modifica dei prodotti del carrello-->
+        <div class="row justify-content-center">
+          <div class="col-md-8 product">
+            <table class="mb-5">
+                <tbody>
+                  {{#each cart.items}}
+                    <tr>
+                        <th>
+                            <img class="object-fit-4" src="{{#if this.image}}{{this.image}}{{else}}../public/assets/images/products/empty.jpg{{/if}}" alt="{{this.name}}"/>
+                        </th>
+                        <th class="text-left">
+                           <a target="_blank" href="/p/{{this.id}}/{{this.id}}"><h4>{{this.name}}</h4></a> 
+                        </th>
+                        <th>
+                          {{#ifCond this.quantity '<' 5}}<!--Modifica quantità-->
+                              <select onchange="this.form.submit()"  name="items[{{@index}}][quantity]" id="select">
+                                <option {{#ifEquals this.quantity 1}}selected="selected"{{/ifEquals}} value="1">1</option>
+                                <option {{#ifEquals this.quantity 2}}selected="selected"{{/ifEquals}} value="2">2</option>
+                                <option {{#ifEquals this.quantity 3}}selected="selected"{{/ifEquals}} value="3">3</option>
+                                <option {{#ifEquals this.quantity 4}}selected="selected"{{/ifEquals}} value="4">4</option>
+                                <option {{#ifEquals this.quantity 5}}selected="selected"{{/ifEquals}} value="5">5+</option>
+                              </select>
+                          {{/ifCond}}
+                          {{#ifCond this.quantity '>' 4}}
+                            <input onchange="this.form.submit()" type="number" class="quantity" name="items[{{@index}}][quantity]" value="{{this.quantity}}">
+                          {{/ifCond}}
+                          <input type="hidden" name="items[{{@index}}][id]" value="{{this.id}}"><!--Non cancellare, è necessario per la modifica della quantità-->
+                        </th>
+                        <th class="text-right">
+                            <h5 class="money mb-0">€ {{price}}</h5>
+                        </th>
+                        <th class="text-right">
+                          <button type="submit" value="{{this.id}}" class="remove btn btn-link" name="remove"><!--Elimina prodotto-->
+                            <i class="material-icons">close</i>
+                          </button>
+                        </th>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+           
             <div class="total text-center">
-              <p class="mb-1">
-                  Totale<span class="mini mr-2"> (Escluse tasse e spedizione):</span> 
-                  <span class="price">{{cart.total}} €</span>
-              </p>
-              <p class="mt-0 mb-4"><span class="mini">Costi di spedizione e sconti verranno calcolati durante il pagamento</span></p>
-              <a href="/checkout" class="btn blue">Procedi all'acquisto</a>
+              <div class="d-flex"> 
+                  <p class="mr-3">Totale:</p> 
+                  <h6 class="js-price">€ 0</h6>
+              </div>
+              <p class="mt-0 mb-4">Costi di spedizione e sconti verranno calcolati durante il pagamento</p>
+              <a href="/checkout" class="btn btn-primary">Procedi all'acquisto</a>
            </div>
           </div>
+        </div>
       </form>
   </div>
 </section>

@@ -1,95 +1,99 @@
+<!--Registrazione-->
+
 <div id="alert-form-error" class="alert alert-danger alert-dismissible fade show text-center"
   style="position:absolute; width:100%; opacity:0; top:0px; visibility:hidden" role="alert">
   Tutti i dati sono obbligatori. Assicurati di averli compilati correttamente
 </div>
 
-<section class="t-page__section c-product pb-0">
-	<div class="container">
-	 <div class="row justify-content-center minh-navbar h-auto">
-			<div class="col-10 col-md-6 col-lg-6">
-					<h3 class="text-center mt-6 mb-4r">Registrati</h3>
-						{{#each errors}}
-							{{#ifEquals type 'password-confirmation-mismatch'}}
-							<div class="c-error">
-								<div class="icon"><i class="material-icons">warning</i></div>
-								<div class="list">
-									<div class="fade show text-left" role="alert">
-										Le password non corrispondono. Riprova
-									</div>
-								</div>
-							</div>
-							{{else}}
-							<div class="c-error">
-								<div class="icon"><i class="material-icons">warning</i></div>
-								<div class="list">
-									<div class="fade show text-left" role="alert">
-										Si è verificato un errore
-									</div>
-								</div>
-							</div>
-							{{/ifEquals}}
-						{{/each}}
-			</div>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-12 my-5 text-center">
+			<h1 class="page-title">
+				Registrati
+			</h1>
 		</div>
-		<div class="row justify-content-center minh-navbar h-auto">
-			<form class="col-10 col-md-6 col-lg-4" method="POST">
-				<div id="registration-form" class="needs-validation text-center">
-          <div id="login-form" class="needs-validation text-center">			
-            <p>Sei già registrato? <a href="/login">Accedi!</a></p>
-            <hr>
-          </div>	
-          <div class="form-group text-left">
-						<label for="name">Nome e cognome</label>
-						<input required type="text" name="name" class="form-control" id="name" aria-describedby="name"
-						placeholder="Inserisci il tuo nome e il tuo cognome">
-					</div>
-
-					<div class="form-group text-left">
-						<label for="email">Indirizzo mail</label>
-						<input required name="email" type="email" class="form-control" id="email" aria-describedby="email"
-						placeholder="Il tuo indirizzo email">
-					</div>
-
-					<div class="form-group text-left">
-						<label for="email">Numero di telefono</label>
-						<input required name="phone" type="tel" class="form-control" id="phone" aria-describedby="phone" required placeholder="Il tuo numero di telefono">
-					</div>
-
-					<div class="form-group text-left">
-						<label for="password">Password</label>
-						<div id="password-input" class="input-group">
-							<input required name="password" type="password" class="form-control border-right-0" id="password"
-							placeholder="Inserisci Password">
-							<div class="input-group-append">
-								<span class="input-group-text bg-white"><i class="material-icons js-eye">visibility_off</i></span>
-							</div>
+		<div class="col-10 col-md-6 col-lg-6">
+			{{#each errors}}
+				{{#ifEquals type 'password-confirmation-mismatch'}}
+				<div class="alert alert-danger" role="alert">
+					<div class="d-flex">
+						<i class="material-icons">warning</i>
+						<div class="fade show">
+							Le password non corrispondono, riprova.
 						</div>
 					</div>
-          <div class="form-group text-left ">
-						<label for="password_confirmation">Ripeti Password</label>
-						<div id="repeat-password" class="input-group">
-							<input required name="password_confirmation" type="password" class="form-control border-right-0" id="repeat-password-input"
-							placeholder="Inserisci di nuovo la Password">
-							<div class="input-group-append">
-								<span class="input-group-text bg-white"><i class="material-icons js-eye">visibility_off</i></span>
-							</div>
-						</div>
-					</div>
-          <div class="form-group text-left terms">
-            <label>
-              <span class="checkbox">
-                <input required title="Please tick" name="accept_terms" type="checkbox" class="required" id="js-accept-terms" />
-              </span> 
-              <span title="Please tick">Acconsento all’uso dei miei dati per le finalità indicate nell’</span>
-              <a target="_blank" href="/eula" title="Opens in a new tab">informativa</a>
-            </label>
-				  </div>
-					<button value="Register" class="btn btn-primary login">Registrati</button>
 				</div>
-			</form>
+				{{else}}
+				<div class="alert alert-danger" role="alert">
+					<div class="d-flex">
+						<i class="material-icons">warning</i>
+						<div class="fade show">
+							Si è verificato un errore
+						</div>
+					</div>
+				</div>
+				{{/ifEquals}}
+			{{/each}}
 		</div>
-	</div> 
-</section>
+	</div>
+	<div class="row justify-content-center">
+		<form class="col-10 col-md-6" method="POST">
+			<div id="registration-form" class="needs-validation">
+		<div id="login-form" class="needs-validation text-center">			
+		<p>Sei già registrato? <a href="/login">Accedi!</a></p>
+		<hr>
+		</div>	
+		<div class="form-group text-left">
+					<label for="name">Nome e cognome</label>
+					<input required type="text" name="name" class="form-control" id="name" aria-describedby="name"
+					placeholder="Inserisci il tuo nome e il tuo cognome">
+				</div>
+
+				<div class="form-group text-left">
+					<label for="email">Indirizzo mail</label>
+					<input required name="email" type="email" class="form-control" id="email" aria-describedby="email"
+					placeholder="Il tuo indirizzo email">
+				</div>
+
+				<div class="form-group text-left mb-5">
+					<label for="email">Numero di telefono</label>
+					<input required name="phone" type="tel" class="form-control" id="phone" aria-describedby="phone" required placeholder="Il tuo numero di telefono">
+				</div>
+
+				<div class="form-group text-left">
+					<label for="password">Password</label>
+					<div id="password-input" class="input-group">
+						<input required name="password" type="password" class="form-control border-right-0" id="password"
+						placeholder="Inserisci Password">
+						<div class="input-group-append">
+							<span class="input-group-text bg-white"><i class="material-icons js-eye">visibility_off</i></span>
+						</div>
+					</div>
+				</div>
+		<div class="form-group text-left ">
+					<label for="password_confirmation">Ripeti Password</label>
+					<div id="repeat-password" class="input-group">
+						<input required name="password_confirmation" type="password" class="form-control border-right-0" id="repeat-password-input"
+						placeholder="Inserisci di nuovo la Password">
+						<div class="input-group-append">
+							<span class="input-group-text bg-white"><i class="material-icons js-eye">visibility_off</i></span>
+						</div>
+					</div>
+				</div>
+		<div class="form-group text-left terms">
+		<label>
+			<span class="checkbox">
+			<input required title="Please tick" name="accept_terms" type="checkbox" class="required" id="js-accept-terms" />
+			</span> 
+			<span title="Please tick">Acconsento all’uso dei miei dati per le finalità indicate nell’</span>
+			<a target="_blank" href="/eula" title="Opens in a new tab">informativa</a>
+		</label>
+				</div>
+				<button value="Register" class="btn btn-primary login">Registrati</button>
+			</div>
+		</form>
+	</div>
+</div> 
 
 <script type="text/javascript">
     function passwordInputController(elementId) {

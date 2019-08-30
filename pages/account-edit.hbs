@@ -1,62 +1,59 @@
-<section class="t-page__section c-profile">
-  <div class="container">
-     <div class="row text-center">
-       <div class="col title">
-          <p>Dati utente</p>
-          <h3>Modifica dati</h3>
-       </div>
-     </div>
-    <div class="row">
-      <div class="col-3 side-navigation">
-          <ul>
-            <li class="welcome">
-              Benvenuto, {{account.name}}
-            </li>
-            <li class="active">
-              <a href="/user/account">Dati utente</a>
-            </li>
-            <li>
-              <a href="/user/account/orders">I tuoi ordini</a>
-            </li>
-            <li>
-              <a href="/logout">Log out</a>
-            </li>
-          </ul>
-      </div>
-      <div class="col-9">
+<!-- Modifica delle credenziali dell'account. Questa pagina è un duplicato di account.hbs, 
+eccetto a partire dal form #edit dove le informazioni sono sostituite da input di modifica e un btn per salvare-->
 
-        <form id="edit" method="POST" class="card mb-4">
-          <div class="header">
-            <div class="head-title">
-              <h4>Dati utente</h4>
-            </div>
-            <div class="actions">
-            </div>
-          </div>
-          <div class="body">
-            <div class="campo">
-              <div class="text">
-                  <h4>Nome</h4>
-                  <input required name="name" type="text" id="nome" aria-describedby="nome" placeholder="Nome Cognome" value="{{account.name}}">
-              </div>
-            </div>
-            <div class="campo">
-              <div class="text">
-                <h4>E-mail</h4>
-               <input required name="email" type="email" id="email" aria-describedby="email" placeholder="mail@mail.it" value="{{account.email}}">   
-              </div>
-            </div>
-            <div class="campo">
-              <div class="text">
-                <h4>Telefono</h4>
-                <input required name="phone" type="" id="telefono" aria-describedby="telefono" placeholder="347 1234567" value="{{account.phone}}">              
-              </div>
-            </div>
-          </div>
-          <div class="save">
-            <button type="submit" class="btn ml-auto"><i class="fas fa-check-circle"></i> Salva</button>
-          </div>
-        </form>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12 text-center my-5">
+      <h1 class="page-title">
+        Account
+      </h1>
     </div>
   </div>
-</section>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <ul class="nav">
+        <li class="nav-item">
+          <div class="nav-link">Benvenuto, {{account.name}}</div>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/user/account">Dati utente</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/account/orders">I tuoi ordini</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log out</a>
+        </li>
+      </ul>
+    </div>
+      <div class="col-md-8">
+        <!--Form di modifica-->
+        <form id="edit" method="POST" class="card my-5">
+          <div class="card-body">
+            <h5 class="card-title">Dati utente</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <h5 class="card-title">Nome</h5>
+              <input required name="name" type="text" id="nome" aria-describedby="nome" placeholder="Nome Cognome" value="{{account.name}}">
+            </li>
+            <li class="list-group-item">
+              <h5 class="card-title">E-mail</h5>
+               <input required name="email" type="email" id="email" aria-describedby="email" placeholder="mail@mail.it" value="{{account.email}}">   
+            </li>
+            <li class="list-group-item">
+              <h5 class="card-title">Telefono</h5>
+              <input required name="phone" type="" id="telefono" aria-describedby="telefono" placeholder="347 1234567" value="{{account.phone}}">              
+            </li> 
+          </ul>
+          <div class="card-body">
+            <div class="save">
+              <button type="submit" class="btn btn-primary">Salva</button>
+            </div>
+          </div>
+        </form>
+        <!--/Form di modifica-->
+    </div>
+  </div>
