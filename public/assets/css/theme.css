@@ -10167,3 +10167,8 @@ footer ul li{
     grid-row: 1/3;
   }
 }
+/*Fix dimensione per il carosello*/
+.carousel-item img{
+  height:560px;
+  object-fit: cover;
+}
