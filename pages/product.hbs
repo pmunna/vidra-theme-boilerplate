@@ -20,31 +20,107 @@
 
     <div class="row justify-content-center">
       <div class="col-md-6 ">
-        {{#each product.images}}
+        {{#each selected_variant.images}}
           <a href="{{this}}">
-            <img class="rounded mb-4 img-fluid" width="" src="{{this}}" xpreview="{{this}}" title="{{../product.name}}">
+            <img class="rounded mb-4 img-fluid" width="" src="{{this}}" xpreview="{{this}}" title="{{../selected_variant.name}}">
           </a>
         {{/each}}
       </div>
 
       <div class="offset-md-1 col-md-5">
-        <h1 class="mb-4">{{product.name}}</h1>
-        <h3 class="mb-4">{{product.sku}}</h3>
-        <h5>{{format_money product.price}}€</h5>
-        {{#ifEquals product.qt 0}}
+        <h1 class="mb-4">{{selected_variant.name}}</h1>
+        <h3 class="mb-4">{{selected_variant.sku}}</h3>
+        <h5>{{format_money selected_variant.price}}€</h5>
+        {{#ifEquals selected_variant.qt 0}}
           <button class="btn btn-success unique-cart-add-item disabled my-4">Il prodotto non è disponibile</button>
         {{else}}
           <button class="btn btn-success unique-cart-add-item my-4"
-          data-name="{{product.name}}" 
-          data-weight="{{product.weight}}" 
-          data-price="{{product.price}}" 
-          data-virtual="{{product.virtual}}"
-          data-url="{{productDataUrl}}" 
-          data-description="{{product.description}}" 
-          data-id="{{product.sku}}" 
-          data-image="{{product.images.[0]}}">Aggiungi al carrello</button>
+          data-name="{{selected_variant.name}}" 
+          data-weight="{{selected_variant.weight}}" 
+          data-price="{{selected_variant.price}}" 
+          data-virtual="{{selected_variant.virtual}}"
+          data-url="{{selected_variantDataUrl}}" 
+          data-description="{{selected_variant.description}}" 
+          data-id="{{selected_variant.sku}}" 
+          data-image="{{selected_variant.images.[0]}}">Aggiungi al carrello</button>
         {{/ifEquals}}
 
+        {{#if product.has_only_default_variant}}
+
+        {{else}}
+
+        <!--<div class="options">
+          Varianti con Select:
+          {{#each product.options_with_values}}
+          {{this.name}}<select id="option_{{~@index~}}" onchange="redirectToVariant()">
+            {{#each this.values}}<option value="{{this}}" {{#ifCond this '===' (lookup ../../selected_variant.options @../index)}}selected="selected"{{/ifCond~}}>{{this}}</option>{{/each}}
+          </select>
+          <br>
+          {{/each}}
+        </div>-->
+<!--
+        <script>
+          
+          const variants = JSON.parse(`{{{variants_json}}}`);
+          function redirectToVariant() {
+            const vals = [];
+            const max_vals = {{product.options_with_values.length}};
+            for (i=0; i < {{product.options_with_values.length}}; i++) {
+              const el = document.getElementById('option_'+i);
+              const val = el.options[el.selectedIndex].value;
+              vals[i] = val;
+            }
+            for (i=0; i < variants.length; i++) {
+              const variant = variants[i];
+              if (variant.options[0] === vals[0]) {
+                if (max_vals === 1) {
+                  return window.location.href = variant.url;
+                }
+                if (variant.options[1] === vals[1]) {
+                  if (max_vals === 2) {
+                    return window.location.href = variant.url;
+                  }
+                  if (variant.options[2] === vals[2]) {
+                    if (max_vals === 3) {
+                      return window.location.href = variant.url;
+                    }
+                  }
+                }
+              }
+            }
+            alert('Variante non disponibile per queste opzioni');
+          }
+        </script>-->
+
+        <!--<div class="variant">
+          Varianti con foto
+          {{#each product.variants}}
+            <div class="media mb-3">
+              <img class="mr-3" width="64" src="{{this.images}}"/>
+              <div class="media-body">
+                <a href="{{this.url}}">{{this.sku}} - {{this.name}}</a>
+              </div>
+            </div>
+          {{/each}}
+        </div>-->
+
+        
+        <div class="variant">
+          Varianti con foto
+          <div class="row text-center text-lg-left">
+          {{#each product.variants}}
+              <div class="col-md-2 col-4">          
+                <a class="d-block mb-4 h-100" {{#ifEquals this.qt 0}}href="{{this.url}}"{{/ifEquals}}>    
+                  <img class="img-fluid img-thumbnail mr-3 {{#ifEquals this.qt 0}}bg-danger{{/ifEquals}}" src="{{this.images}}"/>
+                </a>
+              </div>
+          {{/each}}
+          </div>
+
+        </div>
+
+        {{/if}}
+        
 
         <div>
           <h3 class="mb-2">Info prodotto:</h3>

@@ -28,15 +28,29 @@
     </div>
     {{#each products}} <!--Mostra ogni prodotto dal primo all'ultimo (ord. di aggiunta dal più vecchio). Nell'index vengono mostrati fino a massimo 12 prodotti-->
     <div class="col-6 mb-4">
-      <a href="{{url}}">
+      <a href="{{~#if first_available_variant}}{{~first_available_variant.url}}{{~else}}{{url}}{{~/if}}">
         <div class="card">
-          {{#if isNew}} <span class="badge badge-primary">New</span>  {{/if}}
+          {{#if available}}
+              {{#if isNew}} 
+                <span class="badge badge-primary">New</span>
+              {{/if}}
+            {{else}}
+            <span class="badge badge-secondary">Esaurito</span>
+          {{/if}}
           <div class="card-img-top-container">
             <img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
           </div>
           <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
-            <span>€ {{price}}</span>
+            {{#if has_only_default_variant}}
+              <span>€{{price}}</span>
+            {{else}}
+              {{#if price_varies}}
+                <span>da €{{price_min}} a €{{price_max}}</span>
+              {{else}}
+                <span>€{{price}}</span>
+              {{/if}}
+            {{/if}}	
           </div>
         </div>
       </a> 
