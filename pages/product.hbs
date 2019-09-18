@@ -114,13 +114,12 @@
           <div class="row text-center text-lg-left">
           {{#each product.variants}}
               <div class="col-md-2 col-4">          
-                <a class="d-block mb-4 h-100" {{#ifEquals this.qt 0}}href="{{this.url}}"{{/ifEquals}}>    
+                <a class="d-block mb-4 h-100" {{#ifEquals this.qt 0}}{{else}}href="{{this.url}}"{{/ifEquals}}>    
                   <img class="img-fluid img-thumbnail mr-3 {{#ifEquals this.qt 0}}bg-danger{{/ifEquals}}" src="{{#if this.images}}{{this.images.[0]}}{{else}}../../public/assets/images/products/empty.jpg{{/if}}"/>
                 </a>
               </div>
           {{/each}}
           </div>
-
         </div>
 
         {{/if}}
