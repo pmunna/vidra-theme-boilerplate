@@ -27,64 +27,64 @@
     <div class="contenitore">
 
 <!--Carrello-->
-        <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cart" aria-hidden="true">
-            <div class="cart modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel2">Your cart:</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body js-cart_list c-cart">
-                        <!-- I prodotti del carrello vanno qui (added via js) -->
-                    </div>
-                    <div class="modal-body">
-                        <div class="d-flex"> 
-                            <p class="mr-3">Subtotal:</p> 
-                            <h6><span class="js-price">€ 0</span></h6>
-                        </div>
-                        <a class="btn btn-outline-primary" data-toggle="modal" data-target="#cart">Continue Shopping</a>
-                        <a href="/checkout" class="btn btn-primary">CHECKOUT</a>
-                    </div>
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cart" aria-hidden="true">
+    <div class="cart modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel2">Your cart:</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body js-cart_list c-cart">
+                <!-- I prodotti del carrello vanno qui (added via js) -->
+            </div>
+            <div class="modal-body">
+                <div class="d-flex"> 
+                    <p class="mr-3">Subtotal:</p> 
+                    <h6><span class="js-price">€ 0</span></h6>
                 </div>
+                <a class="btn btn-outline-primary" data-toggle="modal" data-target="#cart">Continue Shopping</a>
+                <a href="/checkout" class="btn btn-primary">CHECKOUT</a>
             </div>
         </div>
+    </div>
+</div>
 <!--Prodotto singolo del carrello-->
-        <div style="display: none;">
-            <div class="js-cart-item-tpl product">
-                <div class="form-row">
-                    <div class="form-group col-2">
-                        <img class="rounded img-fluid" src="" alt="Card image cap">
-                    </div>
-                    <div class="form-group col">
-                        <h4 class="js-cart-item-name mb-0"></h4>
-                    </div>
-                    <div class="form-group col-auto">
-                        <div class="dropdown js-dropdown">
-                            <button class="btn btn-secondary dropdown-toggle qt" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                0
-                            </button>
-                            <div onclick="return false" id="productQty" class="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton">
-                                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">1</a>
-                                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">2</a>
-                                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">3</a>
-                                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">4</a>
-                                <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">5+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group ml-2 col-auto text-right">
-                        <h5 class="money mb-0">€ 0</h5>
-                    </div>
-                    <div class="form-group col-1">
-                        <a onclick="removeProduct(this); return false" class="remove"><i class="material-icons">close</i></a>
+<div style="display: none;">
+    <div class="js-cart-item-tpl product">
+        <div class="form-row">
+            <div class="form-group col-2">
+                <img class="rounded img-fluid" src="" alt="Card image cap">
+            </div>
+            <div class="form-group col">
+                <h4 class="js-cart-item-name mb-0"></h4>
+            </div>
+            <div class="form-group col-auto">
+                <div class="dropdown js-dropdown">
+                    <button class="btn btn-secondary dropdown-toggle qt" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        0
+                    </button>
+                    <div onclick="return false" id="productQty" class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton">
+                        <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">1</a>
+                        <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">2</a>
+                        <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">3</a>
+                        <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">4</a>
+                        <a onclick="updateProduct(this)" class="dropdown-item page-link" href="">5+</a>
                     </div>
                 </div>
             </div>
+            <div class="form-group ml-2 col-auto text-right">
+                <h5 class="money mb-0">€ 0</h5>
+            </div>
+            <div class="form-group col-1">
+                <a onclick="removeProduct(this); return false" class="remove"><i class="material-icons">close</i></a>
+            </div>
         </div>
+    </div>
+</div>
 
 <!--Navbar top-->
 <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light">

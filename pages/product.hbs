@@ -20,11 +20,15 @@
 
     <div class="row justify-content-center">
       <div class="col-md-6 ">
-        {{#each selected_variant.images}}
-          <a href="{{this}}">
-            <img class="rounded mb-4 img-fluid" width="" src="{{this}}" xpreview="{{this}}" title="{{../selected_variant.name}}">
-          </a>
-        {{/each}}
+        {{#if selected_variant.images}}
+          {{#each selected_variant.images}}
+            <a href="{{this}}">
+              <img class="rounded mb-4 img-fluid" width="" src="{{this}}" title="{{../selected_variant.name}}">
+            </a>
+          {{/each}}
+        {{else}}
+          <img class="rounded mb-4 img-fluid" width="" src="{{shopURL}}/public/assets/images/products/empty.jpg" title="{{../selected_variant.name}}">
+        {{/if}}
       </div>
 
       <div class="offset-md-1 col-md-5">
@@ -42,7 +46,7 @@
           data-url="{{selected_variantDataUrl}}" 
           data-description="{{selected_variant.description}}" 
           data-id="{{selected_variant.sku}}" 
-          data-image="{{selected_variant.images.[0]}}">Aggiungi al carrello</button>
+          data-image="{{#if selected_variant.images}}{{selected_variant.images.[0]}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}">Aggiungi al carrello</button>
         {{/ifEquals}}
 
         {{#if product.has_only_default_variant}}
@@ -111,7 +115,7 @@
           {{#each product.variants}}
               <div class="col-md-2 col-4">          
                 <a class="d-block mb-4 h-100" {{#ifEquals this.qt 0}}href="{{this.url}}"{{/ifEquals}}>    
-                  <img class="img-fluid img-thumbnail mr-3 {{#ifEquals this.qt 0}}bg-danger{{/ifEquals}}" src="{{this.images}}"/>
+                  <img class="img-fluid img-thumbnail mr-3 {{#ifEquals this.qt 0}}bg-danger{{/ifEquals}}" src="{{#if this.images}}{{this.images.[0]}}{{else}}../../public/assets/images/products/empty.jpg{{/if}}"/>
                 </a>
               </div>
           {{/each}}
