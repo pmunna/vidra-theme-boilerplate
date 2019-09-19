@@ -10172,6 +10172,7 @@ footer ul li{
   object-fit: cover;
 }
 
-li.dropdown:hover > .dropdown-menu {
-  display: block;
+
+.variant a.active{
+  border:1px solid var(--vidra-theme);
 }
