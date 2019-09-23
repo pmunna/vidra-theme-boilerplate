@@ -54,7 +54,7 @@
 								{{#if activeTag}} href="/collections/{{slug}}/{{external_id}}?{{currentQuery}}" {{/if}}
 								><i class="far fa-circle"></i> Tutti</a>
 						{{else}}
-							<a class="page-link"{{#if activeTag}} href="/collections/{{slug}}/{{external_id}}?{{currentQuery}}" {{/if}}>
+							<a class="page-link"{{#if activeTag}} href="/collections/{{slug}}{{external_id}}?{{currentQuery}}" {{/if}}>
 								<i class="fas fa-circle"></i> 
 								Tutti
 							</a>
@@ -81,31 +81,31 @@
 		<div class="col-12">
 			<div class="row">
 				{{#each products}}
-					<div class="col-md-4 col-6 mb-4">
+					<div class="col-6 mb-4">
 						<a href="{{~#if first_available_variant}}{{~first_available_variant.url}}{{~else}}{{url}}{{~/if}}">
 							<div class="card">
-								{{#if available}}
-									{{#if isNew}} 
-										<span class="badge badge-primary">New</span>
-									{{/if}}
-									{{else}}
-									<span class="badge badge-secondary">Esaurito</span>
+							{{#if available}}
+								{{#if isNew}} 
+									<span class="badge badge-primary">New</span>
 								{{/if}}
-								<div class="card-img-top-container">
-									<img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}../../public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
-								</div>
-								<div class="card-body">
-									<h5 class="card-title">{{name}}</h5>
-									{{#if has_only_default_variant}}
-										<span>€{{price}}</span>
-									{{else}}
-										{{#if price_varies}}
-											<span>da €{{price_min}} a €{{price_max}}</span>
-										{{else}}
-											<span>€{{price}}</span>
-										{{/if}}
-									{{/if}}	
-								</div>
+								{{else}}
+								<span class="badge badge-secondary">Esaurito</span>
+							{{/if}}
+							<div class="card-img-top-container">
+								<img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">{{name}}</h5>
+								{{#if has_only_default_variant}}
+								<span>€{{price}}</span>
+								{{else}}
+								{{#if price_varies}}
+									<span>da €{{price_min}} a €{{price_max}}</span>
+								{{else}}
+									<span>€{{price}}</span>
+								{{/if}}
+								{{/if}}	
+							</div>
 							</div>
 						</a> 
 					</div>
