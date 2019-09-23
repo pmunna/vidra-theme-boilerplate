@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
         integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/public/assets/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="/public/assets/css/theme.css?theme=boilerplate&ver=1.47">
     <link rel="canonical" href="{{canonical}}" />
     <style>
         :root {
@@ -89,9 +89,9 @@
 <!--Navbar top-->
 <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="/"><img src="{{logoURL}}" /></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<div class="mobile-toggle">
+     <span class="navbar-toggler-icon"></span>
+</div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -144,6 +144,25 @@
     </form>
   </div>
 </nav>
+
+<nav id="mobile-navigation">
+    <div class="" style="margin:2rem;">
+        {{#each menu.main.links}}
+            <a class="nav-link" href="{{url}}">{{title}}</a>
+            {{#ifNotEquals links.length 0}}
+            {{#each links}}
+            <a class="nav-link" href="{{url}}">{{title}}</a>
+                {{#ifNotEquals links.length 0}}
+                {{#each links}}
+                <a class="nav-link" href="{{url}}">{{title}}</a>
+                {{/each}}
+                {{/ifNotEquals}}
+            {{/each}}
+            {{/ifNotEquals}}
+        {{/each}}
+    </div>
+</nav>
+
 
 <!--Modal mostrata dopo l'aggiunta di un prodotto al carrello-->
 <div id="afterAddToCart" class="modal" style="display:none">
@@ -453,5 +472,12 @@
   bindNavbar();
 });
     </script>
+
+    <script>
+   $(".mobile-toggle").on('click', function(){
+        $("#mobile-navigation").toggleClass("show");
+        $(".hamburger").toggleClass("show");
+    });
+</script>
 </body>
 </html>
