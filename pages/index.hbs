@@ -7,11 +7,13 @@
       <div class="carousel-inner">
         {{#each allCollections}}
         <div class="carousel-item {{#ifEquals @index 0}}active{{/ifEquals}} ">
+        <a href="{{this.url}}">
           <img class="d-block w-100" src="{{#if this.image}}{{this.image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{this.name}}">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{this.name}}</h5>
             {{{this.description}}}
           </div>
+        </a>
         </div>
         {{/each}}
       </div>
