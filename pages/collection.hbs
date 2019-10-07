@@ -50,28 +50,19 @@
 				<ul class="pagination d-flex flex-wrap">
 					<li class="page-item">
 						{{#if activeTag}}
-								<a class="page-link {{#if activeTag}} {{else}} active disabled {{/if}}"
-								{{#if activeTag}} href="/collections/{{slug}}/{{external_id}}?{{currentQuery}}" {{/if}}
-								><i class="far fa-circle"></i> Tutti</a>
+							<a class="page-link {{#if activeTag}} {{else}} active disabled {{/if}}"
+							{{#if activeTag}} href="/collections/{{slug}}/{{external_id}}?{{currentQuery}}" {{/if}}
+							><i class="far fa-circle"></i> Tutti</a>
 						{{else}}
-							<a class="page-link"{{#if activeTag}} href="/collections/{{slug}}{{external_id}}?{{currentQuery}}" {{/if}}>
-								<i class="fas fa-circle"></i> 
-								Tutti
-							</a>
+							<a class="page-link"{{#if activeTag}} 
+							href="/collections/{{slug}}{{external_id}}?{{currentQuery}}" {{/if}}
+							><i class="fas fa-circle"></i> Tutti</a>
 						{{/if}}
 					</li>
 					{{#each tags}}
-					<li class="page-item">
-						{{#ifEquals ../activeTag @this}}
-							<a class="page-link active disabled"
-							{{#ifNotEquals ../activeTag @this}} href="/collections/{{../slug}}/{{URIEncoding @this}}?{{../currentQuery}}" {{/ifNotEquals}}
-							><i class="fas fa-circle"></i> {{@this}}</a>
-						{{else}}
-								<a class="page-link"
-								{{#ifNotEquals ../activeTag @this}} href="/collections/{{../slug}}/{{URIEncoding @this}}?{{../currentQuery}}" {{/ifNotEquals}}
-								><i class="far fa-circle"></i> {{@this}}</a>
-						{{/ifEquals}}
-					</li>
+						<a class="page-link {{#ifEquals ../activeTag @this}} active disabled {{else}}{{/ifEquals}}" 
+						href="/collections/{{../slug}}{{../external_id}}/{{URIEncoding @this}}?{{../currentQuery}}"
+						><i class="far fa-circle"></i> {{@this}}</a>
 					{{/each}}
 				</ul>
 			{{/if}}

@@ -62,15 +62,9 @@
 					</li>
 					{{#each tags}}
 					<li class="page-item">
-						{{#ifEquals ../activeTag @this}}
-							<a class="page-link active disabled"
-							{{#ifNotEquals ../activeTag @this}} href="/collections/all{{../slug}}/{{URIEncoding @this}}?{{../currentQuery}}" {{/ifNotEquals}}
-							><i class="fas fa-circle"></i> {{@this}}</a>
-						{{else}}
-								<a class="page-link"
-								{{#ifNotEquals ../activeTag @this}} href="/collections/all{{../slug}}/{{URIEncoding @this}}?{{../currentQuery}}" {{/ifNotEquals}}
-								><i class="far fa-circle"></i> {{@this}}</a>
-						{{/ifEquals}}
+						<a class="page-link {{#ifEquals ../activeTag @this}} active disabled {{else}}{{/ifEquals}}" 
+						href="/collections/all/{{URIEncoding @this}}?{{../currentQuery}}"
+						><i class="far fa-circle"></i> {{@this}}</a>
 					</li>
 					{{/each}}
 				</ul>
@@ -97,13 +91,13 @@
 							<div class="card-body">
 								<h5 class="card-title">{{name}}</h5>
 								{{#if has_only_default_variant}}
-								<span>€{{price}}</span>
-								{{else}}
-								{{#if price_varies}}
-									<span>da €{{price_min}} a €{{price_max}}</span>
-								{{else}}
 									<span>€{{price}}</span>
-								{{/if}}
+									{{else}}
+									{{#if price_varies}}
+										<span>da €{{price_min}} a €{{price_max}}</span>
+									{{else}}
+										<span>€{{price}}</span>
+									{{/if}}
 								{{/if}}	
 							</div>
 							</div>
