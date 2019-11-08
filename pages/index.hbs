@@ -8,10 +8,9 @@
         {{#each slides}}
         <div class="carousel-item {{#ifEquals @index 0}}active{{/ifEquals}} ">
         <a href="{{this.meta_description}}">
-          <img class="d-block w-100" src="{{#if this.cover_image}}{{this.cover_image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{this.meta_title}}">
+          <img class="d-block w-100" src="{{#if this.cover_image}}{{this.cover_image}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}" alt="{{this.meta_title}}">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{this.meta_title}}</h5>
-            {{{this.description}}}
           </div>
         </a>
         </div>
@@ -40,7 +39,7 @@
             <span class="badge badge-secondary">Esaurito</span>
           {{/if}}
           <div class="card-img-top-container">
-            <img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
+            <img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
           </div>
           <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
@@ -69,7 +68,7 @@
       <a href="{{url}}">
         <div class="card">
           <div class="card-img-top-container">
-            <img class="card-img-top" src="{{#if image}}{{image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> 
+            <img class="card-img-top" src="{{#if image}}{{image}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> 
           </div>
           <div class="card-body">
             <h5 class="card-title">{{name}}</h5>

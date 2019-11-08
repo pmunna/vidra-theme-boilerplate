@@ -86,7 +86,7 @@
 								<span class="badge badge-secondary">Esaurito</span>
 							{{/if}}
 							<div class="card-img-top-container">
-								<img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
+								<img class="card-img-top" src="{{#if images}}{{images.[0]}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}" alt="{{name}}"> <!--#If che utilizza un'immagine placeholder nel caso non esistano immagini del oggetto-->
 							</div>
 							<div class="card-body">
 								<h5 class="card-title">{{name}}</h5>

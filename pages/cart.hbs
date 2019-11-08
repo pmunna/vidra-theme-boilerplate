@@ -15,7 +15,7 @@
                   {{#each cart.items}}
                     <tr>
                         <th>
-                            <img class="object-fit-4" src="{{#if this.image}}{{this.image}}{{else}}../public/assets/images/products/empty.jpg{{/if}}" alt="{{this.name}}"/>
+                            <img class="object-fit-4" src="{{#if this.image}}{{this.image}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}" alt="{{this.name}}"/>
                         </th>
                         <th class="text-left">
                            <a target="_blank" href="/p/{{this.id}}/{{this.id}}"><h4>{{this.name}}</h4></a> 
