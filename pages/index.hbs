@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col-12 text-center my-5">
       <h1>{{shop.name}}</h1> <!--Nome dell shop. Modificabile dalla Dashboard > Canali > Shop > Configurazione > Nome-->
-    {{#if allCollections.[0]}}
+    {{#if slides.[0]}}
      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        {{#each allCollections}}
+        {{#each slides}}
         <div class="carousel-item {{#ifEquals @index 0}}active{{/ifEquals}} ">
-        <a href="{{this.url}}">
-          <img class="d-block w-100" src="{{#if this.image}}{{this.image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{this.name}}">
+        <a href="{{this.meta_description}}">
+          <img class="d-block w-100" src="{{#if this.cover_image}}{{this.cover_image}}{{else}}public/assets/images/products/empty.jpg{{/if}}" alt="{{this.meta_title}}">
           <div class="carousel-caption d-none d-md-block">
-            <h5>{{this.name}}</h5>
+            <h5>{{this.meta_title}}</h5>
             {{{this.description}}}
           </div>
         </a>

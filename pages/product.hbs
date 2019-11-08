@@ -52,17 +52,16 @@
         {{#if product.has_only_default_variant}}
 
         {{else}}
-
-        <!--<div class="options">
-          Varianti con Select:
+        <div class="options">
+          Varianti con Select:<br/>
           {{#each product.options_with_values}}
           {{this.name}}<select id="option_{{~@index~}}" onchange="redirectToVariant()">
             {{#each this.values}}<option value="{{this}}" {{#ifCond this '===' (lookup ../../selected_variant.options @../index)}}selected="selected"{{/ifCond~}}>{{this}}</option>{{/each}}
           </select>
           <br>
           {{/each}}
-        </div>-->
-<!--
+        </div>
+
         <script>
           
           const variants = JSON.parse(`{{{variants_json}}}`);
@@ -94,19 +93,7 @@
             }
             alert('Variante non disponibile per queste opzioni');
           }
-        </script>-->
-
-        <!--<div class="variant">
-          Varianti con foto
-          {{#each product.variants}}
-            <div class="media mb-3">
-              <img class="mr-3" width="64" src="{{this.images}}"/>
-              <div class="media-body">
-                <a href="{{this.url}}">{{this.sku}} - {{this.name}}</a>
-              </div>
-            </div>
-          {{/each}}
-        </div>-->
+        </script>
 
         
         <div class="variant">
