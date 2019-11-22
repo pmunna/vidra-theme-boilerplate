@@ -49,6 +49,13 @@
           data-image="{{#if selected_variant.images}}{{selected_variant.images.[0]}}{{else}}{{shopURL}}/public/assets/images/products/empty.jpg{{/if}}">Aggiungi al carrello</button>
         {{/ifEquals}}
 
+        <div class="d-flex my-4 share-buttons">
+          <a class="mr-3" target="_blank" href="https://twitter.com/share?url={{canonical}}"><i class="fab fa-twitter"></i></a>
+          <a class="mr-3" target="_blank" href="http://www.facebook.com/sharer.php?u={{canonical}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a class="mr-3" target="_blank" href="http://pinterest.com/pin/create/button/?url={{canonical}}&media={{selected_variant.images.[0]}}"><i class="fab fa-pinterest"></i></a>
+          <a class="mr-3" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{canonical}}" target="_blank"><i class="fab fa-linkedin-in"></i>  </a>
+        </div>
+        
         {{#if product.has_only_default_variant}}
 
         {{else}}

@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12 my-5">
+            <h4>Contattaci</h4> 
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-left">
+            <div class="body">
+                <form method="post" name="contactmodule" id="contact_form" action="/actions/send-form-email">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                    <label for="inputText">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Mario Rossi" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputEmail">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="mario.rossi@mail.it" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputPhone">Telefono</label>
+                    <input type="phone" class="form-control" id="phone" placeholder="3331234567">
+                    </div>
+                    <div class="form-group col-md-6">
+                    <label for="inputText2">Oggetto</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Oggetto" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                    <label for="FormControlTextarea1">Messaggio</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row justify-content-center">
+                    <button type="button" id="submitbutton" class="btn btn-primary">
+                    <div class="loader d-none" id="form-loader">
+                        <div class="e-loading"></div>
+                    </div>
+                    Invia
+                    </button>
+                </div>
+                </form>
+                <div id="risultato"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+// without jQuery (doesn't work in older IEs)
+document.addEventListener('DOMContentLoaded', function(){ 
+
+  function startLoading () {
+    $('#form-loader').addClass("d-inline-flex").removeClass("d-none");
+    $('#submitbutton').prop( "disabled", true );
+  }
+  function stopLoading () {
+    $('#form-loader').addClass("d-none").removeClass("d-inline-flex");
+    $('#submitbutton').prop( "disabled", false );
+  }
+  $("#submitbutton").click(function(){
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var subject = $("#subject").val();
+    var message = $("#message").val();
+    $.ajax({
+      type: "POST",
+      url: atob('L2FjdGlvbnMvc2VuZC1mb3JtLWVtYWls'),
+      data: "name=" + name + "&email=" + email + "&phone=" + phone + "&subject=" + subject + "&message=" + message,
+      dataType: "html",
+      success: function(msg) {
+        $("#risultato").html("✅ Messaggio inviato, il venditore di risponderà al più presto.");
+        $("#contact_form").hide();
+        stopLoading();
+      },
+      error: function() {
+        alert("Invio messaggio fallito, riprova più tardi");
+        stopLoading();
+      }
+    });
+    startLoading();
+    
+    
+  });
+
+}, false);
+</script>
