@@ -210,6 +210,19 @@
     <footer class="mt-5">  <!--Voci del footer modificabili dalla Dashboard > Canali > Shop > Navigazione > Footer-->
     
        <div class="container">
+           <div class="row py-4 mb-5">
+                {{#each features}}
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <i class="material-icons mt-1 mr-4">{{image}}</i>
+                        <div class="text-left">
+                            <h5>{{name}}</h5>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
            <div class="row justify-content-left">
                 {{#each menu.bottom.links}}
                     <div class="col-md-4">
@@ -258,7 +271,7 @@
         onclick="openCartAside(this); return false"></div>
 
     <div class="loader animated">
-        <div class="e-loading"></div>
+        <div class="<!--e-loading-->"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
@@ -505,6 +518,5 @@
     </script>
     <!-- End Google Analytics -->
 {{/if}}
-
 </body>
 </html>
