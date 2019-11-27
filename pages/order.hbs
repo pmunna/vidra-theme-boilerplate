@@ -37,7 +37,7 @@
             </li>
             <li class="list-group-item">
               <h5 class="card-title">Totale:</h5>
-              <p class="card-text">€ {{order.total}}</p>
+              <p class="card-text">{{order.total}}€</p>
             </li>
             <li class="list-group-item">
               <h5 class="card-title">Stato spedizione:</h5>
@@ -65,11 +65,11 @@
             </li> 
             <li class="list-group-item">
               <h5 class="card-title">Spedizione:</h5>
-              <p class="card-text">€ {{#ifEquals '0' order.shipment.rate.cost}}0{{else}}{{order.shipment.rate.cost}}{{/ifEquals}}</p>
+              <p class="card-text">{{#ifEquals '0' order.shipment.rate.cost}}0{{else}}{{order.shipment.rate.cost}}{{/ifEquals}}€</p>
             </li>
             <li class="list-group-item">
               <h5 class="card-title">Totale:</h5>
-              <p class="card-text">€ {{order.total}}</p>
+              <p class="card-text">{{order.total}}€</p>
             </li>
           </ul>
           <div class="modal-body">
@@ -84,7 +84,7 @@
                           <h4 class="mb-0 mr-2">{{name}}</h4>
                       </th>
                       <th class="p-2 min">
-                          <h5 class="mb-0">€ {{price}}</h5>
+                          <h5 class="mb-0">{{price}}€</h5>
                       </th>
                       <th>
                         {{#ifNotEquals '1' quantity}}{{#ifNotEquals '0' quantity}}<div class="amount">x{{quantity}}</div>{{/ifNotEquals}}{{/ifNotEquals}}

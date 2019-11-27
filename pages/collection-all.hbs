@@ -91,12 +91,12 @@
 							<div class="card-body">
 								<h5 class="card-title">{{name}}</h5>
 								{{#if has_only_default_variant}}
-									<span>€{{price}}</span>
+									<span>{{price}}€</span>
 									{{else}}
 									{{#if price_varies}}
-										<span>da €{{price_min}} a €{{price_max}}</span>
+										<span>da {{price_min}}€ a {{price_max}}€</span>
 									{{else}}
-										<span>€{{price}}</span>
+										<span>{{price}}€</span>
 									{{/if}}
 								{{/if}}	
 							</div>
