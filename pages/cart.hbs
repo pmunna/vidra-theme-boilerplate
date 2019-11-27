@@ -36,7 +36,7 @@
                           <input type="hidden" name="items[{{@index}}][id]" value="{{this.id}}"><!--Non cancellare, è necessario per la modifica della quantità-->
                         </th>
                         <th class="text-right">
-                            <h5 class="money mb-0">€ {{price}}</h5>
+                            <h5 class="money mb-0">{{price}}€</h5>
                         </th>
                         <th class="text-right">
                           <button type="submit" value="{{this.id}}" class="remove btn btn-link" name="remove"><!--Elimina prodotto-->
@@ -51,7 +51,7 @@
             <div class="total text-center">
               <div class="d-flex"> 
                   <p class="mr-3">Totale:</p> 
-                  <h6 class="js-price">€ 0</h6>
+                  <h6 class="js-price">0€</h6>
               </div>
               <p class="mt-0 mb-4">Costi di spedizione e sconti verranno calcolati durante il pagamento</p>
               <a href="/checkout" class="btn btn-primary">Procedi all'acquisto</a>
