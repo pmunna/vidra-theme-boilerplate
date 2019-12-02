@@ -87,9 +87,11 @@
 </div>
 
 <!--Navbar top-->
+{{#if top_message}}
 <nav class="top-message">
     {{top_message}}
 </nav>
+{{/if}}
 <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light" {{#if top_message}}style="margin-top:2rem;"{{/if}}>
   <a class="navbar-brand" href="/"><img src="{{logoURL}}" /></a>
 <div class="mobile-toggle">
