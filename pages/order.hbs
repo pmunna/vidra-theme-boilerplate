@@ -84,7 +84,7 @@
                           <h4 class="mb-0 mr-2">{{name}}</h4>
                       </th>
                       <th class="p-2 min">
-                          <h5 class="mb-0">{{price}}€</h5>
+                          <h5 class="mb-0">{{format_money price}}€</h5>
                       </th>
                       <th>
                         {{#ifNotEquals '1' quantity}}{{#ifNotEquals '0' quantity}}<div class="amount">x{{quantity}}</div>{{/ifNotEquals}}{{/ifNotEquals}}
