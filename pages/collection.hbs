@@ -90,6 +90,7 @@
 								{{#if has_only_default_variant}}
 								<span>{{format_money price}}€</span>
 									{{else}}
+									<p>{{variants.length}} varianti</p>
 									{{#if price_varies}}
 										<span>da {{format_money price_min}}€ a {{format_money price_max}}€</span>
 									{{else}}
