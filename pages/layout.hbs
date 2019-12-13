@@ -403,7 +403,7 @@
 
                 $('#afterAddToCart .js-image').attr('src', data.item_sent.image);
                 $('#afterAddToCart .js-name').text(data.item_sent.name);
-                $('#afterAddToCart .js-price').text(data.item_sent.price + ' €');
+                $('#afterAddToCart .js-price').text(formatNumb(data.item_sent.price) + " €");
                 $('#afterAddToCart').modal();
             });
         }

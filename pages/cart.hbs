@@ -36,7 +36,7 @@
                           <input type="hidden" name="items[{{@index}}][id]" value="{{this.id}}"><!--Non cancellare, è necessario per la modifica della quantità-->
                         </th>
                         <th class="text-right">
-                            <h5 class="money mb-0">{{price}}€</h5>
+                            <h5 class="money mb-0">{{format_money price}}€</h5>
                         </th>
                         <th class="text-right">
                           <button type="submit" value="{{this.id}}" class="remove btn btn-link" name="remove"><!--Elimina prodotto-->
